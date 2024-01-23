@@ -13,7 +13,7 @@ namespace PongGames
     public partial class Pong : Form
     {
         bool up, down;
-        int speed = 12;
+        int speed = 10;
         public Pong()
         {
             InitializeComponent();
