@@ -50,6 +50,7 @@
             // 
             this.Exit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.Exit.BackColor = System.Drawing.Color.Black;
+            this.Exit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Exit.Font = new System.Drawing.Font("Segoe Print", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Exit.ForeColor = System.Drawing.Color.White;
             this.Exit.Location = new System.Drawing.Point(275, 325);
@@ -65,6 +66,7 @@
             this.Start.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.Start.AutoEllipsis = true;
             this.Start.BackColor = System.Drawing.Color.Black;
+            this.Start.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Start.Font = new System.Drawing.Font("Segoe Print", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Start.ForeColor = System.Drawing.Color.White;
             this.Start.Location = new System.Drawing.Point(275, 159);
@@ -79,6 +81,7 @@
             // 
             this.Settings.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.Settings.BackColor = System.Drawing.Color.Black;
+            this.Settings.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Settings.Font = new System.Drawing.Font("Segoe Print", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Settings.ForeColor = System.Drawing.Color.White;
             this.Settings.Location = new System.Drawing.Point(275, 242);

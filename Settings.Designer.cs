@@ -38,6 +38,7 @@
             this.Difficult.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.Difficult.AutoEllipsis = true;
             this.Difficult.BackColor = System.Drawing.Color.Black;
+            this.Difficult.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Difficult.Font = new System.Drawing.Font("Segoe Print", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Difficult.ForeColor = System.Drawing.Color.White;
             this.Difficult.Location = new System.Drawing.Point(276, 79);
@@ -53,6 +54,7 @@
             this.Normal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.Normal.AutoEllipsis = true;
             this.Normal.BackColor = System.Drawing.Color.Black;
+            this.Normal.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Normal.Font = new System.Drawing.Font("Segoe Print", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Normal.ForeColor = System.Drawing.Color.White;
             this.Normal.Location = new System.Drawing.Point(276, 197);
@@ -68,6 +70,7 @@
             this.Easy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.Easy.AutoEllipsis = true;
             this.Easy.BackColor = System.Drawing.Color.Black;
+            this.Easy.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Easy.Font = new System.Drawing.Font("Segoe Print", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Easy.ForeColor = System.Drawing.Color.White;
             this.Easy.Location = new System.Drawing.Point(276, 318);
