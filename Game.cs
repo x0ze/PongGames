@@ -17,7 +17,7 @@ namespace PongGames
         int speed = 10;
         public Pong()
         {
-            right = true;
+            left = true;
             InitializeComponent();
         }
 
@@ -59,20 +59,20 @@ namespace PongGames
             {
                 pad2.Top += speed;
             }
-            if (ball.Left > pad1.Left+30 && left == true)
+            if (ball.Left > pad1.Left+24 && left == true)
             {
                 ball.Left -= speed;
             }
-            if (ball.Left == pad1.Left+30)
+            if (ball.Left == pad1.Left+24)
             {
                 left = false;
                 right = true;
             }
-            if (ball.Left < pad2.Left - 30 && right == true)
+            if (ball.Left < pad2.Left - 25 && right == true)
             {
                 ball.Left += speed;
             }
-            if (ball.Left == pad2.Left - 30)
+            if (ball.Left == pad2.Left - 25)
             {
                 right = false;
                 left = true;
