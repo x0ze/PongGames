@@ -16,5 +16,20 @@ namespace PongGames
         {
             InitializeComponent();
         }
+
+        private void Difficult_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Normal_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Easy_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
