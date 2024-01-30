@@ -58,6 +58,11 @@ namespace PongGames
             {
                 pad2.Top += speed;
             }
+            if (ball.Left > pad1.Left+30 && ball.Top > pad1.Top)
+            {
+                ball.Left -= speed;
+            }
+
         }
 
         private void KeyIsUp(object sender, KeyEventArgs e)
