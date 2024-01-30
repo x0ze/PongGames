@@ -13,10 +13,11 @@ namespace PongGames
 {
     public partial class Pong : Form
     {
-        bool up1, down1, up2, down2;
+        bool up1, down1, up2, down2, right, left;
         int speed = 10;
         public Pong()
         {
+            right = true;
             InitializeComponent();
         }
 
@@ -58,9 +59,23 @@ namespace PongGames
             {
                 pad2.Top += speed;
             }
-            if (ball.Left > pad1.Left+30 && ball.Top > pad1.Top)
+            if (ball.Left > pad1.Left+30 && left == true)
             {
                 ball.Left -= speed;
+            }
+            if (ball.Left == pad1.Left+30)
+            {
+                left = false;
+                right = true;
+            }
+            if (ball.Left < pad2.Left - 30 && right == true)
+            {
+                ball.Left += speed;
+            }
+            if (ball.Left == pad2.Left - 30)
+            {
+                right = false;
+                left = true;
             }
 
         }
