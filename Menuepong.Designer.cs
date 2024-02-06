@@ -94,6 +94,7 @@
             // 
             // Menuepong
             // 
+            this.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
@@ -102,7 +103,12 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Exit);
             this.Controls.Add(this.Start);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Menuepong";
+            this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menuepong";
             this.Load += new System.EventHandler(this.Menuepong_Load);
             this.ResumeLayout(false);

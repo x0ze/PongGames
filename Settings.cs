@@ -31,5 +31,10 @@ namespace PongGames
         {
 
         }
+
+        private void Settings_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

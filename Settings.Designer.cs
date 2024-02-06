@@ -90,8 +90,15 @@
             this.Controls.Add(this.Easy);
             this.Controls.Add(this.Normal);
             this.Controls.Add(this.Difficult);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(816, 489);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(816, 489);
             this.Name = "Settings";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Settings";
+            this.Load += new System.EventHandler(this.Settings_Load);
             this.ResumeLayout(false);
 
         }
