@@ -42,11 +42,11 @@
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
+            this.sideDown = new PongGames.picturebox();
+            this.sideUp = new PongGames.picturebox();
             this.outLeft = new PongGames.picturebox();
             this.outRight = new PongGames.picturebox();
             this.ball = new PongGames.picturebox();
-            this.sideUp = new PongGames.picturebox();
-            this.sideDown = new PongGames.picturebox();
             ((System.ComponentModel.ISupportInitialize)(this.pad1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pad2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -59,19 +59,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sideDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sideUp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.outLeft)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.outRight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ball)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sideUp)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sideDown)).BeginInit();
             this.SuspendLayout();
             // 
             // pad1
             // 
             this.pad1.BackColor = System.Drawing.Color.LimeGreen;
-            this.pad1.Location = new System.Drawing.Point(37, 134);
+            this.pad1.Location = new System.Drawing.Point(37, 200);
             this.pad1.Name = "pad1";
-            this.pad1.Size = new System.Drawing.Size(22, 161);
+            this.pad1.Size = new System.Drawing.Size(22, 75);
             this.pad1.TabIndex = 0;
             this.pad1.TabStop = false;
             // 
@@ -84,9 +84,9 @@
             // pad2
             // 
             this.pad2.BackColor = System.Drawing.Color.LimeGreen;
-            this.pad2.Location = new System.Drawing.Point(879, 134);
+            this.pad2.Location = new System.Drawing.Point(879, 200);
             this.pad2.Name = "pad2";
-            this.pad2.Size = new System.Drawing.Size(22, 161);
+            this.pad2.Size = new System.Drawing.Size(22, 75);
             this.pad2.TabIndex = 1;
             this.pad2.TabStop = false;
             // 
@@ -180,6 +180,22 @@
             this.pictureBox11.TabIndex = 8;
             this.pictureBox11.TabStop = false;
             // 
+            // sideDown
+            // 
+            this.sideDown.Location = new System.Drawing.Point(-6, 493);
+            this.sideDown.Name = "sideDown";
+            this.sideDown.Size = new System.Drawing.Size(952, 10);
+            this.sideDown.TabIndex = 17;
+            this.sideDown.TabStop = false;
+            // 
+            // sideUp
+            // 
+            this.sideUp.Location = new System.Drawing.Point(-6, -3);
+            this.sideUp.Name = "sideUp";
+            this.sideUp.Size = new System.Drawing.Size(952, 10);
+            this.sideUp.TabIndex = 16;
+            this.sideUp.TabStop = false;
+            // 
             // outLeft
             // 
             this.outLeft.Location = new System.Drawing.Point(-6, -4);
@@ -204,22 +220,6 @@
             this.ball.Size = new System.Drawing.Size(20, 20);
             this.ball.TabIndex = 13;
             this.ball.TabStop = false;
-            // 
-            // sideUp
-            // 
-            this.sideUp.Location = new System.Drawing.Point(-6, -3);
-            this.sideUp.Name = "sideUp";
-            this.sideUp.Size = new System.Drawing.Size(952, 10);
-            this.sideUp.TabIndex = 16;
-            this.sideUp.TabStop = false;
-            // 
-            // sideDown
-            // 
-            this.sideDown.Location = new System.Drawing.Point(-6, 493);
-            this.sideDown.Name = "sideDown";
-            this.sideDown.Size = new System.Drawing.Size(952, 10);
-            this.sideDown.TabIndex = 17;
-            this.sideDown.TabStop = false;
             // 
             // Pong
             // 
@@ -265,11 +265,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sideDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sideUp)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.outLeft)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.outRight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ball)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sideUp)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sideDown)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -289,11 +289,11 @@
         private System.Windows.Forms.PictureBox pictureBox9;
         private System.Windows.Forms.PictureBox pictureBox10;
         private System.Windows.Forms.PictureBox pictureBox11;
-        private picturebox ball;
         private picturebox outRight;
         private picturebox outLeft;
         private picturebox sideUp;
         private picturebox sideDown;
+        private picturebox ball;
     }
 }
 

@@ -14,9 +14,8 @@ namespace PongGames
     public partial class Pong : Form
     {
         bool upLeft, downLeft, upRight, downRight, right, left, upBall, downBall;
-
-
-        int speed = 10;
+        int scoreLeft = 0, scoreRight = 0;
+        int speed = 15;
         public Pong()
         {
             left = true;
@@ -45,19 +44,19 @@ namespace PongGames
 
         private void MoveEvent(object sender, EventArgs e)
         {
-            if (upLeft == true && pad1.Top > 0)
+            if (upLeft == true && !pad1.Bounds.IntersectsWith(sideUp.Bounds))
             {
                 pad1.Top -= speed;
             }
-            if (downLeft == true && pad1.Top < 340)
+            if (downLeft == true && !pad1.Bounds.IntersectsWith(sideDown.Bounds))
             {
                 pad1.Top += speed;
             }
-            if (upRight == true && pad2.Top > 0)
+            if (upRight == true && !pad2.Bounds.IntersectsWith(sideUp.Bounds))
             {
                 pad2.Top -= speed;
             }
-            if (downRight == true && pad2.Top < 340)
+            if (downRight == true && !pad2.Bounds.IntersectsWith(sideDown.Bounds))
             {
                 pad2.Top += speed;
             }
@@ -68,7 +67,7 @@ namespace PongGames
                 if (upLeft == true)
                 {
                     upBall = true;
-                    downBall = true;
+                    downBall = false;
                 }
                 if (downLeft == true)
                 {
@@ -83,7 +82,7 @@ namespace PongGames
                 if (upRight == true)
                 {
                     upBall = true;
-                    downBall = true;
+                    downBall = false;
                 }
                 if (downRight == true)
                 {
@@ -125,12 +124,18 @@ namespace PongGames
                 upBall = true;
                 downBall = false;
             }
-            if (ball.Bounds.IntersectsWith(outRight.Bounds) | ball.Bounds.IntersectsWith(outLeft.Bounds)) //Ball doesn't touch any pads (GameOver)
+            if (ball.Bounds.IntersectsWith(outRight.Bounds) ) //
             {
-                left = false;
-                right = false;
+                scoreLeft += 1;
+                ball.Left = 480;
+                ball.Top = 270;
             }
-
+            if (ball.Bounds.IntersectsWith(outLeft.Bounds)) //
+            {
+                scoreRight += 1;
+                ball.Left = 480;
+                ball.Top = 270;
+            }
         }
 
         private void KeyIsUp(object sender, KeyEventArgs e)
