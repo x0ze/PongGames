@@ -42,7 +42,11 @@
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
+            this.outLeft = new PongGames.picturebox();
+            this.outRight = new PongGames.picturebox();
             this.ball = new PongGames.picturebox();
+            this.sideUp = new PongGames.picturebox();
+            this.sideDown = new PongGames.picturebox();
             ((System.ComponentModel.ISupportInitialize)(this.pad1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pad2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -55,7 +59,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.outLeft)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.outRight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ball)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sideUp)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sideDown)).BeginInit();
             this.SuspendLayout();
             // 
             // pad1
@@ -172,6 +180,22 @@
             this.pictureBox11.TabIndex = 8;
             this.pictureBox11.TabStop = false;
             // 
+            // outLeft
+            // 
+            this.outLeft.Location = new System.Drawing.Point(-6, -4);
+            this.outLeft.Name = "outLeft";
+            this.outLeft.Size = new System.Drawing.Size(23, 507);
+            this.outLeft.TabIndex = 15;
+            this.outLeft.TabStop = false;
+            // 
+            // outRight
+            // 
+            this.outRight.Location = new System.Drawing.Point(923, -4);
+            this.outRight.Name = "outRight";
+            this.outRight.Size = new System.Drawing.Size(23, 507);
+            this.outRight.TabIndex = 14;
+            this.outRight.TabStop = false;
+            // 
             // ball
             // 
             this.ball.BackColor = System.Drawing.SystemColors.ControlLightLight;
@@ -181,12 +205,32 @@
             this.ball.TabIndex = 13;
             this.ball.TabStop = false;
             // 
+            // sideUp
+            // 
+            this.sideUp.Location = new System.Drawing.Point(-6, -3);
+            this.sideUp.Name = "sideUp";
+            this.sideUp.Size = new System.Drawing.Size(952, 10);
+            this.sideUp.TabIndex = 16;
+            this.sideUp.TabStop = false;
+            // 
+            // sideDown
+            // 
+            this.sideDown.Location = new System.Drawing.Point(-6, 493);
+            this.sideDown.Name = "sideDown";
+            this.sideDown.Size = new System.Drawing.Size(952, 10);
+            this.sideDown.TabIndex = 17;
+            this.sideDown.TabStop = false;
+            // 
             // Pong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(944, 501);
+            this.Controls.Add(this.sideDown);
+            this.Controls.Add(this.sideUp);
+            this.Controls.Add(this.outLeft);
+            this.Controls.Add(this.outRight);
             this.Controls.Add(this.ball);
             this.Controls.Add(this.pictureBox7);
             this.Controls.Add(this.pictureBox8);
@@ -216,7 +260,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.outLeft)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.outRight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ball)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sideUp)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sideDown)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -237,6 +285,10 @@
         private System.Windows.Forms.PictureBox pictureBox10;
         private System.Windows.Forms.PictureBox pictureBox11;
         private picturebox ball;
+        private picturebox outRight;
+        private picturebox outLeft;
+        private picturebox sideUp;
+        private picturebox sideDown;
     }
 }
 

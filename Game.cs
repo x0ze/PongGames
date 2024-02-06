@@ -13,7 +13,9 @@ namespace PongGames
 {
     public partial class Pong : Form
     {
-        bool up1, down1, up2, down2, right, left;
+        bool upLeft, downLeft, upRight, downRight, right, left, upBall, downBall;
+
+
         int speed = 10;
         public Pong()
         {
@@ -25,77 +27,109 @@ namespace PongGames
         {
             if (e.KeyCode == Keys.W)
             {
-                up1 = true;
+                upLeft = true;
             }
             if (e.KeyCode == Keys.S)
             {
-                down1 = true;
+                downLeft = true;
             }
             if (e.KeyCode == Keys.Up)
             {
-                up2 = true;
+                upRight = true;
             }
             if (e.KeyCode == Keys.Down)
             {
-                down2 = true;
+                downRight = true;
             }
         }
 
         private void MoveEvent(object sender, EventArgs e)
         {
-            if (up1 == true && pad1.Top > 0)
+            if (upLeft == true && pad1.Top > 0)
             {
                 pad1.Top -= speed;
             }
-            if (down1 == true && pad1.Top < 340)
+            if (downLeft == true && pad1.Top < 340)
             {
                 pad1.Top += speed;
             }
-            if (up2 == true && pad2.Top > 0)
+            if (upRight == true && pad2.Top > 0)
             {
                 pad2.Top -= speed;
             }
-            if (down2 == true && pad2.Top < 340)
+            if (downRight == true && pad2.Top < 340)
             {
                 pad2.Top += speed;
             }
-            if (ball.Bounds.IntersectsWith(pad1.Bounds))
+            if (ball.Bounds.IntersectsWith(pad1.Bounds)) //Rebound of the ball on the left pad
             {
                 left = false;
                 right = true;
+                if (upLeft == true)
+                {
+                    upBall = true;
+                    downBall = true;
+                }
+                if (downLeft == true)
+                {
+                    upBall = false;
+                    downBall = true;
+                }
             }
-            if (ball.Bounds.IntersectsWith(pad2.Bounds))
+            if (ball.Bounds.IntersectsWith(pad2.Bounds)) //Rebound of the ball on the right pad
             {
                 left = true;
                 right = false;
+                if (upRight == true)
+                {
+                    upBall = true;
+                    downBall = true;
+                }
+                if (downRight == true)
+                {
+                    upBall = false;
+                    downBall = true;
+                }
             }
-            if (left==true)
+            if (left==true) //Ball move left
             {
                 ball.Left -=speed;
+                if (upBall == true)
+                {
+                    ball.Top -=speed;
+                }
+                if (downBall == true)
+                {
+                    ball.Top +=speed;
+                }
             }
-            if (right == true)
+            if (right == true) //Ball move right
             {
                 ball.Left += speed;
+                if (upBall == true)
+                {
+                    ball.Top -= speed;
+                }
+                if (downBall == true)
+                {
+                    ball.Top += speed;
+                }
             }
-            /*if (ball.Left > pad1.Left+24 && left == true)
+            if (ball.Bounds.IntersectsWith(sideUp.Bounds))
             {
-                ball.Left -= speed;
+                upBall= false;
+                downBall = true;
             }
-            if (ball.Left == pad1.Left+24)
+            if (ball.Bounds.IntersectsWith(sideDown.Bounds))
+            {
+                upBall = true;
+                downBall = false;
+            }
+            if (ball.Bounds.IntersectsWith(outRight.Bounds) | ball.Bounds.IntersectsWith(outLeft.Bounds)) //Ball doesn't touch any pads (GameOver)
             {
                 left = false;
-                right = true;
-            }
-            if (ball.Left < pad2.Left - 25 && right == true)
-            {
-                ball.Left += speed;
-            }
-            if (ball.Left == pad2.Left - 25)
-            {
                 right = false;
-                left = true;
             }
-            */
 
         }
 
@@ -103,19 +137,19 @@ namespace PongGames
         {
             if (e.KeyCode == Keys.W)
             {
-                up1 = false;
+                upLeft = false;
             }
             if (e.KeyCode == Keys.S)
             {
-                down1 = false;
+                downLeft = false;
             }
             if (e.KeyCode == Keys.Up)
             {
-                up2 = false;
+                upRight = false;
             }
             if (e.KeyCode == Keys.Down)
             {
-                down2 = false;
+                downRight = false;
             }
         }
     }
