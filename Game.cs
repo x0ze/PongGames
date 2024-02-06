@@ -59,7 +59,25 @@ namespace PongGames
             {
                 pad2.Top += speed;
             }
-            if (ball.Left > pad1.Left+24 && left == true)
+            if (ball.Bounds.IntersectsWith(pad1.Bounds))
+            {
+                left = false;
+                right = true;
+            }
+            if (ball.Bounds.IntersectsWith(pad2.Bounds))
+            {
+                left = true;
+                right = false;
+            }
+            if (left==true)
+            {
+                ball.Left -=speed;
+            }
+            if (right == true)
+            {
+                ball.Left += speed;
+            }
+            /*if (ball.Left > pad1.Left+24 && left == true)
             {
                 ball.Left -= speed;
             }
@@ -77,6 +95,7 @@ namespace PongGames
                 right = false;
                 left = true;
             }
+            */
 
         }
 
