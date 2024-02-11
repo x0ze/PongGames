@@ -215,9 +215,9 @@
             // ball
             // 
             this.ball.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ball.Location = new System.Drawing.Point(451, 209);
+            this.ball.Location = new System.Drawing.Point(477, 219);
             this.ball.Name = "ball";
-            this.ball.Size = new System.Drawing.Size(20, 20);
+            this.ball.Size = new System.Drawing.Size(15, 15);
             this.ball.TabIndex = 13;
             this.ball.TabStop = false;
             // 
