@@ -47,6 +47,8 @@
             this.outLeft = new PongGames.picturebox();
             this.outRight = new PongGames.picturebox();
             this.ball = new PongGames.picturebox();
+            this.score1 = new System.Windows.Forms.Label();
+            this.score2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pad1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pad2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -223,12 +225,38 @@
             this.ball.TabIndex = 13;
             this.ball.TabStop = false;
             // 
+            // score1
+            // 
+            this.score1.AutoSize = true;
+            this.score1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.score1.Font = new System.Drawing.Font("Impact", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.score1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.score1.Location = new System.Drawing.Point(401, 10);
+            this.score1.Name = "score1";
+            this.score1.Size = new System.Drawing.Size(31, 36);
+            this.score1.TabIndex = 18;
+            this.score1.Text = "0";
+            // 
+            // score2
+            // 
+            this.score2.AutoSize = true;
+            this.score2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.score2.Font = new System.Drawing.Font("Impact", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.score2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.score2.Location = new System.Drawing.Point(541, 9);
+            this.score2.Name = "score2";
+            this.score2.Size = new System.Drawing.Size(31, 36);
+            this.score2.TabIndex = 19;
+            this.score2.Text = "0";
+            // 
             // Pong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(944, 501);
+            this.Controls.Add(this.score2);
+            this.Controls.Add(this.score1);
             this.Controls.Add(this.sideDown);
             this.Controls.Add(this.sideUp);
             this.Controls.Add(this.outLeft);
@@ -273,6 +301,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.outRight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ball)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -296,6 +325,8 @@
         private picturebox sideUp;
         private picturebox sideDown;
         private picturebox ball;
+        private System.Windows.Forms.Label score1;
+        private System.Windows.Forms.Label score2;
     }
 }
 

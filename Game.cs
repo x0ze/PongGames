@@ -15,6 +15,7 @@ namespace PongGames
     {
         bool upLeft, downLeft, upRight, downRight, right, left, upBall, downBall;
 
+
         private void pictureBox7_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -144,6 +145,8 @@ namespace PongGames
                 ball.Left = 480;
                 ball.Top = 270;
             }
+            score1.Text = scoreLeft.ToString();
+            score2.Text = scoreRight.ToString();
         }
 
         private void KeyIsUp(object sender, KeyEventArgs e)
