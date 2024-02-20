@@ -210,6 +210,7 @@
             // 
             // outRight
             // 
+            this.outRight.BackColor = System.Drawing.Color.Black;
             this.outRight.Location = new System.Drawing.Point(923, -4);
             this.outRight.Name = "outRight";
             this.outRight.Size = new System.Drawing.Size(23, 507);

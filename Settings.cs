@@ -37,7 +37,7 @@ namespace PongGames
 
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
         {
             this.Hide();
             Menuepong menuewindows = new Menuepong();

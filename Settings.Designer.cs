@@ -32,7 +32,7 @@
             this.Difficult = new System.Windows.Forms.Label();
             this.Normal = new System.Windows.Forms.Label();
             this.Easy = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // Difficult
@@ -83,16 +83,16 @@
             this.Easy.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.Easy.Click += new System.EventHandler(this.Easy_Click);
             // 
-            // label2
+            // label1
             // 
-            this.label2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label2.Image = ((System.Drawing.Image)(resources.GetObject("label2.Image")));
-            this.label2.Location = new System.Drawing.Point(536, -3);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(303, 232);
-            this.label2.TabIndex = 7;
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            this.label1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label1.Image = ((System.Drawing.Image)(resources.GetObject("label1.Image")));
+            this.label1.Location = new System.Drawing.Point(745, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(43, 44);
+            this.label1.TabIndex = 7;
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // Settings
             // 
@@ -100,7 +100,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.Easy);
             this.Controls.Add(this.Normal);
             this.Controls.Add(this.Difficult);
@@ -123,6 +123,6 @@
         private System.Windows.Forms.Label Difficult;
         private System.Windows.Forms.Label Normal;
         private System.Windows.Forms.Label Easy;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }
