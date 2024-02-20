@@ -28,6 +28,7 @@ namespace PongGames
             this.Hide();
             Form1 solowindows = new Form1();
             solowindows.Show();
+         
         }
 
         private void Exit_Click(object sender, EventArgs e)
@@ -40,6 +41,11 @@ namespace PongGames
             this.Hide();
             Settings settingswindows = new Settings();
             settingswindows.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

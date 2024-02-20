@@ -56,7 +56,7 @@
             this.Exit.ForeColor = System.Drawing.Color.White;
             this.Exit.Location = new System.Drawing.Point(275, 288);
             this.Exit.Name = "Exit";
-            this.Exit.Size = new System.Drawing.Size(254, 83);
+            this.Exit.Size = new System.Drawing.Size(254, 79);
             this.Exit.TabIndex = 4;
             this.Exit.Text = "Exit";
             this.Exit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -72,7 +72,7 @@
             this.Start.ForeColor = System.Drawing.Color.White;
             this.Start.Location = new System.Drawing.Point(275, 177);
             this.Start.Name = "Start";
-            this.Start.Size = new System.Drawing.Size(254, 83);
+            this.Start.Size = new System.Drawing.Size(254, 79);
             this.Start.TabIndex = 3;
             this.Start.Text = "start";
             this.Start.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -92,14 +92,14 @@
             // Menuepong
             // 
             this.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 446);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Exit);
             this.Controls.Add(this.Start);
+            this.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
