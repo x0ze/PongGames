@@ -28,16 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menuepong));
             this.label1 = new System.Windows.Forms.Label();
             this.Exit = new System.Windows.Forms.Label();
             this.Start = new System.Windows.Forms.Label();
-            this.Settings = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Segoe Print", 65.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Impact", 65.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(191, 9);
             this.label1.Name = "label1";
@@ -51,9 +52,9 @@
             this.Exit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.Exit.BackColor = System.Drawing.Color.Black;
             this.Exit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Exit.Font = new System.Drawing.Font("Segoe Print", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Exit.Font = new System.Drawing.Font("Impact", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Exit.ForeColor = System.Drawing.Color.White;
-            this.Exit.Location = new System.Drawing.Point(275, 325);
+            this.Exit.Location = new System.Drawing.Point(275, 288);
             this.Exit.Name = "Exit";
             this.Exit.Size = new System.Drawing.Size(254, 83);
             this.Exit.TabIndex = 4;
@@ -67,9 +68,9 @@
             this.Start.AutoEllipsis = true;
             this.Start.BackColor = System.Drawing.Color.Black;
             this.Start.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Start.Font = new System.Drawing.Font("Segoe Print", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Start.Font = new System.Drawing.Font("Impact", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Start.ForeColor = System.Drawing.Color.White;
-            this.Start.Location = new System.Drawing.Point(275, 159);
+            this.Start.Location = new System.Drawing.Point(275, 177);
             this.Start.Name = "Start";
             this.Start.Size = new System.Drawing.Size(254, 83);
             this.Start.TabIndex = 3;
@@ -77,20 +78,16 @@
             this.Start.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.Start.Click += new System.EventHandler(this.Start_Click);
             // 
-            // Settings
+            // label2
             // 
-            this.Settings.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.Settings.BackColor = System.Drawing.Color.Black;
-            this.Settings.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Settings.Font = new System.Drawing.Font("Segoe Print", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Settings.ForeColor = System.Drawing.Color.White;
-            this.Settings.Location = new System.Drawing.Point(275, 242);
-            this.Settings.Name = "Settings";
-            this.Settings.Size = new System.Drawing.Size(254, 83);
-            this.Settings.TabIndex = 6;
-            this.Settings.Text = "settings";
-            this.Settings.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.Settings.Click += new System.EventHandler(this.label2_Click);
+            this.label2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label2.Image = ((System.Drawing.Image)(resources.GetObject("label2.Image")));
+            this.label2.Location = new System.Drawing.Point(744, -5);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(58, 61);
+            this.label2.TabIndex = 6;
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // Menuepong
             // 
@@ -99,7 +96,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.Settings);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Exit);
             this.Controls.Add(this.Start);
@@ -120,6 +117,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label Exit;
         private System.Windows.Forms.Label Start;
-        private System.Windows.Forms.Label Settings;
+        private System.Windows.Forms.Label label2;
     }
 }

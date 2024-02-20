@@ -14,6 +14,14 @@ namespace PongGames
     public partial class Pong : Form
     {
         bool upLeft, downLeft, upRight, downRight, right, left, upBall, downBall;
+
+        private void pictureBox7_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form1 form1 = new Form1();  
+            form1.Show();
+        }
+
         int scoreLeft = 0, scoreRight = 0;
         int speed = 15;
         public Pong()

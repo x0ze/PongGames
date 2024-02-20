@@ -25,8 +25,9 @@ namespace PongGames
 
         private void Start_Click(object sender, EventArgs e)
         {
-            Pong gamewindows = new Pong();
-            gamewindows.Show();
+            this.Hide();
+            Form1 solowindows = new Form1();
+            solowindows.Show();
         }
 
         private void Exit_Click(object sender, EventArgs e)
@@ -36,8 +37,9 @@ namespace PongGames
 
         private void label2_Click(object sender, EventArgs e)
         {
-            Settings gamesettings = new Settings(); 
-            gamesettings.Show();
+            this.Hide();
+            Settings settingswindows = new Settings();
+            settingswindows.Show();
         }
     }
 }

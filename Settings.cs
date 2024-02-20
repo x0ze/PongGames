@@ -19,12 +19,12 @@ namespace PongGames
 
         private void Difficult_Click(object sender, EventArgs e)
         {
-
+           
         }
 
         private void Normal_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void Easy_Click(object sender, EventArgs e)
@@ -35,6 +35,13 @@ namespace PongGames
         private void Settings_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Menuepong menuewindows = new Menuepong();
+            menuewindows.Show();
         }
     }
 }

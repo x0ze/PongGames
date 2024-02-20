@@ -28,9 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Settings));
             this.Difficult = new System.Windows.Forms.Label();
             this.Normal = new System.Windows.Forms.Label();
             this.Easy = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // Difficult
@@ -39,7 +41,7 @@
             this.Difficult.AutoEllipsis = true;
             this.Difficult.BackColor = System.Drawing.Color.Black;
             this.Difficult.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Difficult.Font = new System.Drawing.Font("Segoe Print", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Difficult.Font = new System.Drawing.Font("Impact", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Difficult.ForeColor = System.Drawing.Color.White;
             this.Difficult.Location = new System.Drawing.Point(276, 79);
             this.Difficult.Name = "Difficult";
@@ -55,7 +57,7 @@
             this.Normal.AutoEllipsis = true;
             this.Normal.BackColor = System.Drawing.Color.Black;
             this.Normal.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Normal.Font = new System.Drawing.Font("Segoe Print", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Normal.Font = new System.Drawing.Font("Impact", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Normal.ForeColor = System.Drawing.Color.White;
             this.Normal.Location = new System.Drawing.Point(276, 197);
             this.Normal.Name = "Normal";
@@ -71,7 +73,7 @@
             this.Easy.AutoEllipsis = true;
             this.Easy.BackColor = System.Drawing.Color.Black;
             this.Easy.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Easy.Font = new System.Drawing.Font("Segoe Print", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Easy.Font = new System.Drawing.Font("Impact", 36F);
             this.Easy.ForeColor = System.Drawing.Color.White;
             this.Easy.Location = new System.Drawing.Point(276, 318);
             this.Easy.Name = "Easy";
@@ -81,15 +83,28 @@
             this.Easy.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.Easy.Click += new System.EventHandler(this.Easy_Click);
             // 
+            // label2
+            // 
+            this.label2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label2.Image = ((System.Drawing.Image)(resources.GetObject("label2.Image")));
+            this.label2.Location = new System.Drawing.Point(536, -21);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(271, 165);
+            this.label2.TabIndex = 7;
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
             // Settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.Easy);
             this.Controls.Add(this.Normal);
             this.Controls.Add(this.Difficult);
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(816, 489);
@@ -108,5 +123,6 @@
         private System.Windows.Forms.Label Difficult;
         private System.Windows.Forms.Label Normal;
         private System.Windows.Forms.Label Easy;
+        private System.Windows.Forms.Label label2;
     }
 }
