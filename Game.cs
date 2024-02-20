@@ -136,12 +136,24 @@ namespace PongGames
             if (ball.Bounds.IntersectsWith(outRight.Bounds) ) //
             {
                 scoreLeft += 1;
+                if(scoreLeft == 5)
+                {
+                    this.Hide();
+                    GameOver gameOver = new GameOver();
+                    gameOver.Show();
+                }
                 ball.Left = 480;
                 ball.Top = 270;
             }
             if (ball.Bounds.IntersectsWith(outLeft.Bounds)) //
             {
                 scoreRight += 1;
+                if (scoreRight == 5)
+                {
+                    this.Hide();
+                    GameOver gameOver = new GameOver();
+                    gameOver.Show();
+                }
                 ball.Left = 480;
                 ball.Top = 270;
             }
