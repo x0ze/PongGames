@@ -216,7 +216,7 @@
             // 
             // ball
             // 
-            this.ball.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ball.BackColor = System.Drawing.Color.Yellow;
             this.ball.Location = new System.Drawing.Point(477, 219);
             this.ball.Name = "ball";
             this.ball.Size = new System.Drawing.Size(15, 15);
