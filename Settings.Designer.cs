@@ -87,9 +87,9 @@
             // 
             this.label2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label2.Image = ((System.Drawing.Image)(resources.GetObject("label2.Image")));
-            this.label2.Location = new System.Drawing.Point(536, -21);
+            this.label2.Location = new System.Drawing.Point(536, -3);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(271, 165);
+            this.label2.Size = new System.Drawing.Size(303, 232);
             this.label2.TabIndex = 7;
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label2.Click += new System.EventHandler(this.label2_Click);
