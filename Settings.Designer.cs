@@ -43,7 +43,7 @@
             this.Difficult.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Difficult.Font = new System.Drawing.Font("Impact", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Difficult.ForeColor = System.Drawing.Color.White;
-            this.Difficult.Location = new System.Drawing.Point(276, 79);
+            this.Difficult.Location = new System.Drawing.Point(276, 69);
             this.Difficult.Name = "Difficult";
             this.Difficult.Size = new System.Drawing.Size(254, 83);
             this.Difficult.TabIndex = 4;
@@ -59,7 +59,7 @@
             this.Normal.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Normal.Font = new System.Drawing.Font("Impact", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Normal.ForeColor = System.Drawing.Color.White;
-            this.Normal.Location = new System.Drawing.Point(276, 197);
+            this.Normal.Location = new System.Drawing.Point(276, 186);
             this.Normal.Name = "Normal";
             this.Normal.Size = new System.Drawing.Size(254, 83);
             this.Normal.TabIndex = 5;
