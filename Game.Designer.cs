@@ -137,7 +137,7 @@
             // 
             // pictureBox7
             // 
-            this.pictureBox7.BackColor = System.Drawing.Color.Red;
+            this.pictureBox7.BackColor = System.Drawing.Color.DarkGray;
             this.pictureBox7.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox7.Location = new System.Drawing.Point(477, 459);
             this.pictureBox7.Name = "pictureBox7";
