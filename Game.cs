@@ -28,11 +28,6 @@ namespace PongGames
             Restart.Hide();
         }
 
-        private void gameover_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void Back_menu_Click(object sender, EventArgs e)
         {
             this.Hide();
