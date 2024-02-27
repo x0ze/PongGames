@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Media;
 
 namespace PongGames
 {
@@ -17,6 +18,8 @@ namespace PongGames
     {
         
         bool upLeft, downLeft, upRight, downRight, right, left, upBall, downBall;
+        SoundPlayer onTouch = new SoundPlayer(@"..\..\ressources\bip.wav");
+        
 
         private void Pong_Load(object sender, EventArgs e)
         {
@@ -104,6 +107,7 @@ namespace PongGames
             }
             if (ball.Bounds.IntersectsWith(pad1.Bounds)) //Rebound of the ball on the left pad
             {
+                onTouch.Play();
                 left = false;
                 right = true;
                 if (upLeft == true)
@@ -119,6 +123,7 @@ namespace PongGames
             }
             if (ball.Bounds.IntersectsWith(pad2.Bounds)) //Rebound of the ball on the right pad
             {
+                onTouch.Play();
                 left = true;
                 right = false;
                 if (upRight == true)
