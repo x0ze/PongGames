@@ -4,6 +4,8 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing.Drawing2D;
 using System.Linq;
+using System.Reflection.Emit;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,8 +15,34 @@ namespace PongGames
 {
     public partial class Pong : Form
     {
+        
         bool upLeft, downLeft, upRight, downRight, right, left, upBall, downBall;
 
+        private void Pong_Load(object sender, EventArgs e)
+        {
+            gameover.Hide();
+            Back_menu.Hide();
+            Restart.Hide();
+        }
+
+        private void gameover_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Back_menu_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Menuepong form3 = new Menuepong();
+            form3.Show();
+        }
+
+        private void Restart_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Pong pong = new Pong();
+            pong.Show();
+        }
 
         private void pictureBox7_Click(object sender, EventArgs e)
         {
@@ -138,9 +166,9 @@ namespace PongGames
                 scoreLeft += 1;
                 if(scoreLeft == 5)
                 {
-                    this.Hide();
-                    GameOver gameOver = new GameOver();
-                    gameOver.Show();
+                    gameover.Show();
+                    Back_menu.Show();
+                    Restart.Show();
                 }
                 ball.Left = 480;
                 ball.Top = 270;
@@ -150,9 +178,9 @@ namespace PongGames
                 scoreRight += 1;
                 if (scoreRight == 5)
                 {
-                    this.Hide();
-                    GameOver gameOver = new GameOver();
-                    gameOver.Show();
+                    gameover.Show();
+                    Back_menu.Show();
+                    Restart.Show();
                 }
                 ball.Left = 480;
                 ball.Top = 270;

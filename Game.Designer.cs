@@ -44,6 +44,9 @@
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.score1 = new System.Windows.Forms.Label();
             this.score2 = new System.Windows.Forms.Label();
+            this.gameover = new System.Windows.Forms.Label();
+            this.Back_menu = new System.Windows.Forms.Label();
+            this.Restart = new System.Windows.Forms.Label();
             this.sideDown = new PongGames.picturebox();
             this.sideUp = new PongGames.picturebox();
             this.outLeft = new PongGames.picturebox();
@@ -104,7 +107,7 @@
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pictureBox2.Location = new System.Drawing.Point(477, 59);
+            this.pictureBox2.Location = new System.Drawing.Point(477, 60);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(15, 30);
             this.pictureBox2.TabIndex = 3;
@@ -208,6 +211,45 @@
             this.score2.TabIndex = 19;
             this.score2.Text = "0";
             // 
+            // gameover
+            // 
+            this.gameover.BackColor = System.Drawing.Color.Transparent;
+            this.gameover.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gameover.ForeColor = System.Drawing.Color.Transparent;
+            this.gameover.Location = new System.Drawing.Point(133, 60);
+            this.gameover.Name = "gameover";
+            this.gameover.Size = new System.Drawing.Size(711, 146);
+            this.gameover.TabIndex = 20;
+            this.gameover.Text = "GAME OVER";
+            this.gameover.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.gameover.Click += new System.EventHandler(this.gameover_Click);
+            // 
+            // Back_menu
+            // 
+            this.Back_menu.BackColor = System.Drawing.Color.Transparent;
+            this.Back_menu.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Back_menu.ForeColor = System.Drawing.Color.Transparent;
+            this.Back_menu.Location = new System.Drawing.Point(261, 181);
+            this.Back_menu.Name = "Back_menu";
+            this.Back_menu.Size = new System.Drawing.Size(443, 146);
+            this.Back_menu.TabIndex = 21;
+            this.Back_menu.Text = "Back to menu ";
+            this.Back_menu.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Back_menu.Click += new System.EventHandler(this.Back_menu_Click);
+            // 
+            // Restart
+            // 
+            this.Restart.BackColor = System.Drawing.Color.Transparent;
+            this.Restart.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Restart.ForeColor = System.Drawing.Color.Transparent;
+            this.Restart.Location = new System.Drawing.Point(360, 293);
+            this.Restart.Name = "Restart";
+            this.Restart.Size = new System.Drawing.Size(252, 146);
+            this.Restart.TabIndex = 22;
+            this.Restart.Text = "Restart";
+            this.Restart.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Restart.Click += new System.EventHandler(this.Restart_Click);
+            // 
             // sideDown
             // 
             this.sideDown.Location = new System.Drawing.Point(-6, 493);
@@ -256,6 +298,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(944, 501);
+            this.Controls.Add(this.Restart);
+            this.Controls.Add(this.Back_menu);
+            this.Controls.Add(this.gameover);
             this.Controls.Add(this.score2);
             this.Controls.Add(this.score1);
             this.Controls.Add(this.sideDown);
@@ -282,6 +327,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PongGames";
             this.TopMost = true;
+            this.Load += new System.EventHandler(this.Pong_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.KeyIsDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.KeyIsUp);
             ((System.ComponentModel.ISupportInitialize)(this.pad1)).EndInit();
@@ -328,6 +374,9 @@
         private picturebox ball;
         private System.Windows.Forms.Label score1;
         private System.Windows.Forms.Label score2;
+        private System.Windows.Forms.Label gameover;
+        private System.Windows.Forms.Label Back_menu;
+        private System.Windows.Forms.Label Restart;
     }
 }
 
