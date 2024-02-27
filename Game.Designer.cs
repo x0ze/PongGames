@@ -298,7 +298,7 @@
             // levelUp
             // 
             this.levelUp.Enabled = true;
-            this.levelUp.Interval = 15000;
+            this.levelUp.Interval = 30000;
             this.levelUp.Tick += new System.EventHandler(this.speedUp);
             // 
             // Pong

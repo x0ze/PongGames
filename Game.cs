@@ -171,6 +171,7 @@ namespace PongGames
                 scoreLeft += 1;
                 if(scoreLeft == 5)
                 {
+                    movement.Stop();
                     gameover.Show();
                     Back_menu.Show();
                     Restart.Show();
