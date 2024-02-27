@@ -53,7 +53,7 @@
             this.Exit.BackColor = System.Drawing.Color.Black;
             this.Exit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Exit.Font = new System.Drawing.Font("Impact", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Exit.ForeColor = System.Drawing.Color.White;
+            this.Exit.ForeColor = System.Drawing.Color.Crimson;
             this.Exit.Location = new System.Drawing.Point(275, 288);
             this.Exit.Name = "Exit";
             this.Exit.Size = new System.Drawing.Size(254, 79);
@@ -69,7 +69,7 @@
             this.Start.BackColor = System.Drawing.Color.Black;
             this.Start.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Start.Font = new System.Drawing.Font("Impact", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Start.ForeColor = System.Drawing.Color.White;
+            this.Start.ForeColor = System.Drawing.Color.Lime;
             this.Start.Location = new System.Drawing.Point(275, 177);
             this.Start.Name = "Start";
             this.Start.Size = new System.Drawing.Size(254, 79);
