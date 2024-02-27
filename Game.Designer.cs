@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Pong));
             this.pad1 = new System.Windows.Forms.PictureBox();
             this.movement = new System.Windows.Forms.Timer(this.components);
             this.pad2 = new System.Windows.Forms.PictureBox();
@@ -217,37 +218,38 @@
             this.gameover.BackColor = System.Drawing.Color.Transparent;
             this.gameover.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gameover.ForeColor = System.Drawing.Color.Transparent;
-            this.gameover.Location = new System.Drawing.Point(133, 60);
+            this.gameover.Image = ((System.Drawing.Image)(resources.GetObject("gameover.Image")));
+            this.gameover.Location = new System.Drawing.Point(367, 93);
             this.gameover.Name = "gameover";
-            this.gameover.Size = new System.Drawing.Size(711, 146);
+            this.gameover.Size = new System.Drawing.Size(238, 269);
             this.gameover.TabIndex = 20;
-            this.gameover.Text = "GAME OVER";
             this.gameover.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.gameover.Click += new System.EventHandler(this.gameover_Click);
             // 
             // Back_menu
             // 
             this.Back_menu.BackColor = System.Drawing.Color.Transparent;
+            this.Back_menu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Back_menu.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Back_menu.ForeColor = System.Drawing.Color.Transparent;
-            this.Back_menu.Location = new System.Drawing.Point(261, 181);
+            this.Back_menu.Image = ((System.Drawing.Image)(resources.GetObject("Back_menu.Image")));
+            this.Back_menu.Location = new System.Drawing.Point(201, 188);
             this.Back_menu.Name = "Back_menu";
-            this.Back_menu.Size = new System.Drawing.Size(443, 146);
+            this.Back_menu.Size = new System.Drawing.Size(132, 115);
             this.Back_menu.TabIndex = 21;
-            this.Back_menu.Text = "Back to menu ";
             this.Back_menu.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.Back_menu.Click += new System.EventHandler(this.Back_menu_Click);
             // 
             // Restart
             // 
             this.Restart.BackColor = System.Drawing.Color.Transparent;
+            this.Restart.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Restart.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Restart.ForeColor = System.Drawing.Color.Transparent;
-            this.Restart.Location = new System.Drawing.Point(360, 293);
+            this.Restart.Image = ((System.Drawing.Image)(resources.GetObject("Restart.Image")));
+            this.Restart.Location = new System.Drawing.Point(626, 188);
             this.Restart.Name = "Restart";
-            this.Restart.Size = new System.Drawing.Size(252, 146);
+            this.Restart.Size = new System.Drawing.Size(127, 129);
             this.Restart.TabIndex = 22;
-            this.Restart.Text = "Restart";
             this.Restart.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.Restart.Click += new System.EventHandler(this.Restart_Click);
             // 
