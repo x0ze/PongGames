@@ -12,36 +12,27 @@ namespace PongGames
 {
     public partial class Form1 : Form
     {
-        public Form1()
+
+        public Form1()                                                              // Initialize Forms (windows)
         {
             InitializeComponent();
         }
 
-        private void solo_Click(object sender, EventArgs e)
+        private void solo_Click(object sender, EventArgs e)                         // Start solo mode on click
         {
             this.Hide();
             Pong gamewindows = new Pong();
             gamewindows.Show();
         }
 
-        private void Duo_Click(object sender, EventArgs e)
+        private void Duo_Click(object sender, EventArgs e)                          // Start duo mode on click
         {
             this.Hide();
             Pong gamewindows = new Pong();
             gamewindows.Show();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click_1(object sender, EventArgs e)
+        private void label2_Click_1(object sender, EventArgs e)                     // Back to start Menu
         {
             this.Hide();
             Menuepong menuegame = new Menuepong();
