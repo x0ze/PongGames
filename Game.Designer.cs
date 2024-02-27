@@ -52,6 +52,7 @@
             this.outLeft = new PongGames.picturebox();
             this.outRight = new PongGames.picturebox();
             this.ball = new PongGames.picturebox();
+            this.levelUp = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pad1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pad2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -292,6 +293,12 @@
             this.ball.TabIndex = 13;
             this.ball.TabStop = false;
             // 
+            // levelUp
+            // 
+            this.levelUp.Enabled = true;
+            this.levelUp.Interval = 15000;
+            this.levelUp.Tick += new System.EventHandler(this.speedUp);
+            // 
             // Pong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -377,6 +384,7 @@
         private System.Windows.Forms.Label gameover;
         private System.Windows.Forms.Label Back_menu;
         private System.Windows.Forms.Label Restart;
+        private System.Windows.Forms.Timer levelUp;
     }
 }
 

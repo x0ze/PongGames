@@ -44,6 +44,11 @@ namespace PongGames
             pong.Show();
         }
 
+        private void speedUp(object sender, EventArgs e)
+        {
+            speed += 1;
+        }
+
         private void pictureBox7_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -178,6 +183,7 @@ namespace PongGames
                 scoreRight += 1;
                 if (scoreRight == 5)
                 {
+                    movement.Stop();
                     gameover.Show();
                     Back_menu.Show();
                     Restart.Show();
