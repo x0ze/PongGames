@@ -52,8 +52,8 @@ namespace PongGames
         private void pictureBox7_Click(object sender, EventArgs e)                  // Hidden escape Menu (button on a picturebox of the net)
         {
             this.Hide();
-            Form1 form1 = new Form1();  
-            form1.Show();
+            Menuepong form3 = new Menuepong();
+            form3.Show();
         }
 
         public Pong()                                                               // Game Form (Windows)

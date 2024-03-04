@@ -21,8 +21,8 @@ namespace PongGames
         private void Start_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form1 solowindows = new Form1();
-            solowindows.Show();
+            Pong Game = new Pong();
+            Game.Show();
          
         }
 
