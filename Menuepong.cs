@@ -42,5 +42,17 @@ namespace PongGames
         {
 
         }
+
+        private void solo_Click(object sender, EventArgs e)
+        {
+            solo.BackColor = Color.Gray;
+            duo.BackColor = Color.Transparent;
+        }
+
+        private void duo_Click(object sender, EventArgs e)
+        {
+            duo.BackColor = Color.Gray;
+            solo.BackColor = Color.Transparent;
+        }
     }
 }

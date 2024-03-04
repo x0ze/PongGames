@@ -33,6 +33,8 @@
             this.Exit = new System.Windows.Forms.Label();
             this.Start = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.solo = new System.Windows.Forms.Label();
+            this.duo = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -89,12 +91,46 @@
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
-            // Menu pong
+            // solo
+            // 
+            this.solo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.solo.AutoEllipsis = true;
+            this.solo.BackColor = System.Drawing.Color.Black;
+            this.solo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.solo.Font = new System.Drawing.Font("Impact", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.solo.ForeColor = System.Drawing.Color.White;
+            this.solo.Location = new System.Drawing.Point(321, 256);
+            this.solo.Name = "solo";
+            this.solo.Size = new System.Drawing.Size(76, 31);
+            this.solo.TabIndex = 7;
+            this.solo.Text = "Solo";
+            this.solo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.solo.Click += new System.EventHandler(this.solo_Click);
+            // 
+            // duo
+            // 
+            this.duo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.duo.AutoEllipsis = true;
+            this.duo.BackColor = System.Drawing.Color.Gray;
+            this.duo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.duo.Font = new System.Drawing.Font("Impact", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.duo.ForeColor = System.Drawing.Color.White;
+            this.duo.Location = new System.Drawing.Point(403, 256);
+            this.duo.Name = "duo";
+            this.duo.Size = new System.Drawing.Size(76, 31);
+            this.duo.TabIndex = 8;
+            this.duo.Text = "Duo";
+            this.duo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.duo.Click += new System.EventHandler(this.duo_Click);
+            // 
+            // Menuepong
             // 
             this.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(800, 446);
+            this.Controls.Add(this.duo);
+            this.Controls.Add(this.solo);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Exit);
@@ -103,7 +139,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "Menu pong";
+            this.Name = "Menuepong";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu pong";
@@ -117,5 +153,7 @@
         private System.Windows.Forms.Label Exit;
         private System.Windows.Forms.Label Start;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label solo;
+        private System.Windows.Forms.Label duo;
     }
 }
