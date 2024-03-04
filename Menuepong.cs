@@ -13,6 +13,8 @@ namespace PongGames
 {
     public partial class Menuepong : Form
     {
+        bool Solo = false;
+        bool Duo = true;
         public Menuepong()
         {
             InitializeComponent();
@@ -20,9 +22,15 @@ namespace PongGames
 
         private void Start_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Pong Game = new Pong();
-            Game.Show();
+            if(Solo)
+            { }
+
+            if (Duo)
+            {
+                this.Hide();
+                Pong Game = new Pong();
+                Game.Show();
+            }
          
         }
 
@@ -47,12 +55,16 @@ namespace PongGames
         {
             solo.BackColor = Color.Gray;
             duo.BackColor = Color.Transparent;
+            Duo = false;
+            Solo = true;
         }
 
         private void duo_Click(object sender, EventArgs e)
         {
             duo.BackColor = Color.Gray;
             solo.BackColor = Color.Transparent;
+            Duo = true;  
+            Solo = false;   
         }
     }
 }
