@@ -184,18 +184,24 @@ namespace PongGames
             }
             if (ball.Bounds.IntersectsWith(pad2.Bounds) && Menuepong.Duo || ball.Bounds.IntersectsWith(wallTraining.Bounds) && Menuepong.Solo)            // Rebound of the ball on the right pad
             {
-                onTouch.Play();                                                 // Play sound on touch
+                if (Settings.soundOn)
+                {
+                    onTouch.Play();                                             // Play sound on touch
+                }                                                   
                 left = true;
                 right = false;
-                if (upRight == true)
+                if(Menuepong.Duo)
                 {
-                    upBall = true;
-                    downBall = false;
-                }
-                if (downRight == true)
-                {
-                    upBall = false;
-                    downBall = true;
+                    if (upRight == true)
+                    {
+                        upBall = true;
+                        downBall = false;
+                    }
+                    if (downRight == true)
+                    {
+                        upBall = false;
+                        downBall = true;
+                    }
                 }
             }
             if (left==true)                                                     // Ball move left
