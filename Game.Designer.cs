@@ -51,6 +51,8 @@
             this.levelUp = new System.Windows.Forms.Timer(this.components);
             this.wallTraining = new System.Windows.Forms.PictureBox();
             this.Pause = new System.Windows.Forms.Label();
+            this.Timer = new System.Windows.Forms.Timer(this.components);
+            this.Timertime = new System.Windows.Forms.Label();
             this.sideDown = new PongGames.picturebox();
             this.sideUp = new PongGames.picturebox();
             this.outLeft = new PongGames.picturebox();
@@ -285,6 +287,24 @@
             this.Pause.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.Pause.Click += new System.EventHandler(this.Pause_Click);
             // 
+            // Timer
+            // 
+            this.Timer.Enabled = true;
+            this.Timer.Interval = 1000;
+            this.Timer.Tick += new System.EventHandler(this.timer_Tick);
+            // 
+            // Timertime
+            // 
+            this.Timertime.AutoSize = true;
+            this.Timertime.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Timertime.Font = new System.Drawing.Font("Impact", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Timertime.ForeColor = System.Drawing.Color.Aqua;
+            this.Timertime.Location = new System.Drawing.Point(401, 9);
+            this.Timertime.Name = "Timertime";
+            this.Timertime.Size = new System.Drawing.Size(31, 36);
+            this.Timertime.TabIndex = 25;
+            this.Timertime.Text = "0";
+            // 
             // sideDown
             // 
             this.sideDown.Location = new System.Drawing.Point(-6, 493);
@@ -333,6 +353,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(944, 501);
+            this.Controls.Add(this.Timertime);
             this.Controls.Add(this.Pause);
             this.Controls.Add(this.wallTraining);
             this.Controls.Add(this.Restart);
@@ -418,6 +439,8 @@
         private System.Windows.Forms.Timer levelUp;
         private System.Windows.Forms.PictureBox wallTraining;
         private System.Windows.Forms.Label Pause;
+        private System.Windows.Forms.Timer Timer;
+        private System.Windows.Forms.Label Timertime;
     }
 }
 

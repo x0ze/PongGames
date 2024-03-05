@@ -20,10 +20,14 @@ namespace PongGames
         
         bool upLeft, downLeft, upRight, downRight, right, left, upBall, downBall, gameOver = false;   // Initialize boolean var
         SoundPlayer onTouch = new SoundPlayer(@"..\..\ressources\bip.wav");         // Initialize var for sounds
-        int scoreLeft = 0, scoreRight = 0;                                          // Define var score to 0 on start
+        int scoreLeft = 0, scoreRight = 0, seconde = 0;                             // Define var score to 0 on start
         int speed = 15;                                                             // Speed of the Game on start
-        byte starting;
 
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            seconde += 1;
+            Timertime.Text = seconde.ToString();
+        }
         private void Pong_Load(object sender, EventArgs e)                          // Load game menu
         {
             gameover.Hide();                                                        // Hide Game over
@@ -42,6 +46,7 @@ namespace PongGames
 
         private void Pause_Click(object sender, EventArgs e)
         {
+                Timer.Start();
                 movement.Start();
                 Back_menu.Hide();
                 Restart.Hide();
@@ -121,6 +126,7 @@ namespace PongGames
             {
                 if (e.KeyCode == Keys.Space || e.KeyCode == Keys.Escape)
                 {
+                    Timer.Stop();   
                     movement.Stop();
                     Back_menu.Show();
                     Restart.Show();
@@ -161,11 +167,13 @@ namespace PongGames
             }
             if (Menuepong.Solo)
             {
+                score1.Hide();
                 pad2.Hide();
                 wallTraining.Show();
             }
             if(Menuepong.Duo)                                                   // Duo Mode
             {
+                Timertime.Hide();
                 pad2.Show();
                 wallTraining.Hide();
                 if (upRight == true && !pad2.Bounds.IntersectsWith(sideUp.Bounds))
@@ -258,6 +266,7 @@ namespace PongGames
                 scoreLeft += 1;
                 if(scoreLeft == 5)
                 {
+                    Timer.Stop();
                     movement.Stop();
                     gameover.Show();
                     Back_menu.Show();
@@ -274,6 +283,7 @@ namespace PongGames
                 scoreRight += 1;
                 if (scoreRight == 5)
                 {
+                    Timer.Stop();
                     movement.Stop();
                     gameover.Show();
                     Back_menu.Show();
