@@ -44,7 +44,7 @@ namespace PongGames
 
         private void Normal_Click(object sender, EventArgs e)
         {
-            Difficult.ForeColor = Color.Red;
+            Difficult.ForeColor = Color.White;
             Normal.ForeColor = Color.Yellow;
             Easy.ForeColor = Color.White;
             easy = false;

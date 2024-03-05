@@ -50,6 +50,7 @@
             this.Restart = new System.Windows.Forms.Label();
             this.levelUp = new System.Windows.Forms.Timer(this.components);
             this.wallTraining = new System.Windows.Forms.PictureBox();
+            this.Pause = new System.Windows.Forms.Label();
             this.sideDown = new PongGames.picturebox();
             this.sideUp = new PongGames.picturebox();
             this.outLeft = new PongGames.picturebox();
@@ -271,6 +272,20 @@
             this.wallTraining.TabIndex = 23;
             this.wallTraining.TabStop = false;
             // 
+            // Pause
+            // 
+            this.Pause.BackColor = System.Drawing.Color.Transparent;
+            this.Pause.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Pause.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Pause.ForeColor = System.Drawing.Color.Transparent;
+            this.Pause.Image = ((System.Drawing.Image)(resources.GetObject("Pause.Image")));
+            this.Pause.Location = new System.Drawing.Point(418, 188);
+            this.Pause.Name = "Pause";
+            this.Pause.Size = new System.Drawing.Size(135, 134);
+            this.Pause.TabIndex = 24;
+            this.Pause.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Pause.Click += new System.EventHandler(this.Pause_Click);
+            // 
             // sideDown
             // 
             this.sideDown.Location = new System.Drawing.Point(-6, 493);
@@ -319,6 +334,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(944, 501);
+            this.Controls.Add(this.Pause);
             this.Controls.Add(this.wallTraining);
             this.Controls.Add(this.Restart);
             this.Controls.Add(this.Back_menu);
@@ -402,6 +418,7 @@
         private System.Windows.Forms.Label Restart;
         private System.Windows.Forms.Timer levelUp;
         private System.Windows.Forms.PictureBox wallTraining;
+        private System.Windows.Forms.Label Pause;
     }
 }
 

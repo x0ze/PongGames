@@ -17,7 +17,7 @@ namespace PongGames
     public partial class Pong : Form
     {
         
-        bool upLeft, downLeft, upRight, downRight, right, left, upBall, downBall;   // Initializr boolean var
+        bool upLeft, downLeft, upRight, downRight, right, left, upBall, downBall, gameOver = false;   // Initialize boolean var
         SoundPlayer onTouch = new SoundPlayer(@"..\..\ressources\bip.wav");         // Initialize var for sounds
         int scoreLeft = 0, scoreRight = 0;                                          // Define var score to 0 on start
         int speed = 15;                                                             // Speed of the Game on start
@@ -27,6 +27,7 @@ namespace PongGames
             gameover.Hide();                                                        // Hide Game over
             Back_menu.Hide();                                                       // Hide Menu
             Restart.Hide();                                                         // Hide Restart
+            Pause.Hide();                                                           // Hide Pause
             if (Settings.difficult)
             {
                 speed = 25;
@@ -35,6 +36,14 @@ namespace PongGames
             {
                 speed = 10;
             }
+        }
+
+        private void Pause_Click(object sender, EventArgs e)
+        {
+                movement.Start();
+                Back_menu.Hide();
+                Restart.Hide();
+                Pause.Hide();
         }
 
         private void Back_menu_Click(object sender, EventArgs e)                    // In game back menu
@@ -99,6 +108,17 @@ namespace PongGames
             {
                 downRight = true;
             }
+            if (gameOver == false)
+            {
+                if (e.KeyCode == Keys.Space || e.KeyCode == Keys.Escape)
+                {
+                    movement.Stop();
+                    Back_menu.Show();
+                    Restart.Show();
+                    Pause.Show();
+                }
+            }
+            
         }
         private void KeyIsUp(object sender, KeyEventArgs e)                     // Key not click
         {
@@ -239,7 +259,7 @@ namespace PongGames
                     gameover.Show();
                     Back_menu.Show();
                     Restart.Show();
-
+                    gameOver = true;
                 }
                 upBall = false;
                 downBall = false;
