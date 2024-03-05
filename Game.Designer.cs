@@ -58,8 +58,8 @@
             this.outLeft = new PongGames.picturebox();
             this.outRight = new PongGames.picturebox();
             this.ball = new PongGames.picturebox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.confeti = new System.Windows.Forms.Label();
+            this.You_win = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pad1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pad2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -349,29 +349,31 @@
             this.ball.TabIndex = 13;
             this.ball.TabStop = false;
             // 
-            // label2
+            // confeti
             // 
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Transparent;
-            this.label2.Image = ((System.Drawing.Image)(resources.GetObject("label2.Image")));
-            this.label2.Location = new System.Drawing.Point(-6, -4);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(952, 507);
-            this.label2.TabIndex = 27;
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.confeti.BackColor = System.Drawing.Color.Transparent;
+            this.confeti.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.confeti.ForeColor = System.Drawing.Color.Transparent;
+            this.confeti.Image = ((System.Drawing.Image)(resources.GetObject("confeti.Image")));
+            this.confeti.Location = new System.Drawing.Point(-6, -4);
+            this.confeti.Name = "confeti";
+            this.confeti.Size = new System.Drawing.Size(952, 507);
+            this.confeti.TabIndex = 27;
+            this.confeti.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.confeti.Click += new System.EventHandler(this.confeti_Click);
             // 
-            // label1
+            // You_win
             // 
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Transparent;
-            this.label1.Image = ((System.Drawing.Image)(resources.GetObject("label1.Image")));
-            this.label1.Location = new System.Drawing.Point(259, 219);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(435, 103);
-            this.label1.TabIndex = 28;
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.You_win.BackColor = System.Drawing.Color.Transparent;
+            this.You_win.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.You_win.ForeColor = System.Drawing.Color.Transparent;
+            this.You_win.Image = ((System.Drawing.Image)(resources.GetObject("You_win.Image")));
+            this.You_win.Location = new System.Drawing.Point(259, 219);
+            this.You_win.Name = "You_win";
+            this.You_win.Size = new System.Drawing.Size(435, 103);
+            this.You_win.TabIndex = 28;
+            this.You_win.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.You_win.Click += new System.EventHandler(this.You_win_Click);
             // 
             // Pong
             // 
@@ -379,8 +381,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(944, 501);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.You_win);
+            this.Controls.Add(this.confeti);
             this.Controls.Add(this.Timertime);
             this.Controls.Add(this.Pause);
             this.Controls.Add(this.wallTraining);
@@ -469,8 +471,8 @@
         private System.Windows.Forms.Label Pause;
         private System.Windows.Forms.Timer Timer;
         private System.Windows.Forms.Label Timertime;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label confeti;
+        private System.Windows.Forms.Label You_win;
     }
 }
 

@@ -21,7 +21,20 @@ namespace PongGames
         bool upLeft, downLeft, upRight, downRight, right, left, upBall, downBall, gameOver = false;   // Initialize boolean var
         SoundPlayer onTouch = new SoundPlayer(@"..\..\ressources\bip.wav");         // Initialize var for sounds
         SoundPlayer onGameOver = new SoundPlayer(@"..\..\ressources\gameover.wav"); // Initialize var for sounds
-        int scoreLeft = 0, scoreRight = 0, seconde = 0;                             // Define var score to 0 on start
+        int scoreLeft = 0, scoreRight = 0, seconde = 0, numberbounds = 0;                             // Define var score to 0 on start
+
+        private void confeti_Click(object sender, EventArgs e)
+        {
+            if(numberbounds == 2 )
+                confeti.Show();
+        }
+
+        private void You_win_Click(object sender, EventArgs e)
+        {
+            if (numberbounds == 2)
+                You_win.Show();
+        }
+
         int speed = 15;                                                             // Speed of the Game on start
 
         private void timer_Tick(object sender, EventArgs e)
@@ -31,6 +44,8 @@ namespace PongGames
         }
         private void Pong_Load(object sender, EventArgs e)                          // Load game menu
         {
+            confeti.Hide();                                                         // Hide confeti
+            You_win.Hide();                                                         // Hide You win
             gameover.Hide();                                                        // Hide Game over
             Back_menu.Hide();                                                       // Hide Menu
             Restart.Hide();                                                         // Hide Restart
@@ -160,10 +175,12 @@ namespace PongGames
         {
             if (upLeft == true && !pad1.Bounds.IntersectsWith(sideUp.Bounds))   
             {
+                
                 pad1.Top -= speed;
             }
             if (downLeft == true && !pad1.Bounds.IntersectsWith(sideDown.Bounds))
             {
+                
                 pad1.Top += speed;
             }
             if (Menuepong.Solo)
@@ -180,10 +197,12 @@ namespace PongGames
                 if (upRight == true && !pad2.Bounds.IntersectsWith(sideUp.Bounds))
                 {
                     pad2.Top -= speed;
+                    
                 }
                 if (downRight == true && !pad2.Bounds.IntersectsWith(sideDown.Bounds))
                 {
                     pad2.Top += speed;
+                    
                 }
             }
 
@@ -254,16 +273,19 @@ namespace PongGames
             }
             if (ball.Bounds.IntersectsWith(sideUp.Bounds))                      // Rebound on the upper side of the game board
             {
-                upBall= false;
+                
+                upBall = false;
                 downBall = true;
             }
             if (ball.Bounds.IntersectsWith(sideDown.Bounds))                    // Rebound on the bottom side of the game board
             {
+                
                 upBall = true;
                 downBall = false;
             }
             if (ball.Bounds.IntersectsWith(outRight.Bounds) )                   // Player Left scored
             {
+                
                 scoreLeft += 1;
                 if(scoreLeft == 5)
                 {
@@ -281,6 +303,7 @@ namespace PongGames
             }
             if (ball.Bounds.IntersectsWith(outLeft.Bounds))                     // Player Right scored
             {
+               
                 scoreRight += 1;
                 if (scoreRight == 5)
                 {
