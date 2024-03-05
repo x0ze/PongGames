@@ -20,6 +20,7 @@ namespace PongGames
         
         bool upLeft, downLeft, upRight, downRight, right, left, upBall, downBall, gameOver = false;   // Initialize boolean var
         SoundPlayer onTouch = new SoundPlayer(@"..\..\ressources\bip.wav");         // Initialize var for sounds
+        SoundPlayer onGameOver = new SoundPlayer(@"..\..\ressources\gameover.wav"); // Initialize var for sounds
         int scoreLeft = 0, scoreRight = 0, seconde = 0;                             // Define var score to 0 on start
         int speed = 15;                                                             // Speed of the Game on start
 
@@ -286,6 +287,10 @@ namespace PongGames
                     Timer.Stop();
                     movement.Stop();
                     gameover.Show();
+                    if (Settings.soundOn)
+                    {
+                        onGameOver.Play();                                      // Play sound on touch
+                    }
                     Back_menu.Show();
                     Restart.Show();
                     gameOver = true;
