@@ -56,12 +56,12 @@
             this.Exit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Exit.Font = new System.Drawing.Font("Impact", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Exit.ForeColor = System.Drawing.Color.Crimson;
-            this.Exit.Location = new System.Drawing.Point(275, 288);
+            this.Exit.Location = new System.Drawing.Point(275, 302);
             this.Exit.Name = "Exit";
-            this.Exit.Size = new System.Drawing.Size(254, 79);
+            this.Exit.Size = new System.Drawing.Size(254, 53);
             this.Exit.TabIndex = 4;
             this.Exit.Text = "Exit";
-            this.Exit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Exit.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.Exit.Click += new System.EventHandler(this.Exit_Click);
             // 
             // Start
@@ -72,9 +72,9 @@
             this.Start.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Start.Font = new System.Drawing.Font("Impact", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Start.ForeColor = System.Drawing.Color.Lime;
-            this.Start.Location = new System.Drawing.Point(275, 177);
+            this.Start.Location = new System.Drawing.Point(275, 186);
             this.Start.Name = "Start";
-            this.Start.Size = new System.Drawing.Size(254, 79);
+            this.Start.Size = new System.Drawing.Size(254, 53);
             this.Start.TabIndex = 3;
             this.Start.Text = "start";
             this.Start.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
