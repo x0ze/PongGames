@@ -264,9 +264,10 @@
             // wallTraining
             // 
             this.wallTraining.BackColor = System.Drawing.Color.SlateGray;
+            this.wallTraining.Image = ((System.Drawing.Image)(resources.GetObject("wallTraining.Image")));
             this.wallTraining.Location = new System.Drawing.Point(879, -3);
             this.wallTraining.Name = "wallTraining";
-            this.wallTraining.Size = new System.Drawing.Size(22, 506);
+            this.wallTraining.Size = new System.Drawing.Size(67, 506);
             this.wallTraining.TabIndex = 23;
             this.wallTraining.TabStop = false;
             // 
