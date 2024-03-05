@@ -22,7 +22,6 @@ namespace PongGames
         int scoreLeft = 0, scoreRight = 0;                                          // Define var score to 0 on start
         int speed = 15;                                                             // Speed of the Game on start
 
-
         private void Pong_Load(object sender, EventArgs e)                          // Load game menu
         {
             gameover.Hide();                                                        // Hide Game over
@@ -111,14 +110,25 @@ namespace PongGames
             {
                 pad1.Top += speed;
             }
-            if (upRight == true && !pad2.Bounds.IntersectsWith(sideUp.Bounds))
+            if (Menuepong.Solo)
             {
-                pad2.Top -= speed;
+                pad2.Hide();
+                wallTraining.Show();
             }
-            if (downRight == true && !pad2.Bounds.IntersectsWith(sideDown.Bounds))
+            if(Menuepong.Duo)                                                   // Duo Mode
             {
-                pad2.Top += speed;
+                pad2.Show();
+                wallTraining.Hide();
+                if (upRight == true && !pad2.Bounds.IntersectsWith(sideUp.Bounds))
+                {
+                    pad2.Top -= speed;
+                }
+                if (downRight == true && !pad2.Bounds.IntersectsWith(sideDown.Bounds))
+                {
+                    pad2.Top += speed;
+                }
             }
+
             if (ball.Bounds.IntersectsWith(pad1.Bounds))                        // Rebound of the ball on the left pad
             {
                 onTouch.Play();                                                 // Play sound on touch
@@ -135,7 +145,7 @@ namespace PongGames
                     downBall = true;
                 }
             }
-            if (ball.Bounds.IntersectsWith(pad2.Bounds))                        // Rebound of the ball on the right pad
+            if (ball.Bounds.IntersectsWith(pad2.Bounds) && Menuepong.Duo || ball.Bounds.IntersectsWith(wallTraining.Bounds) && Menuepong.Solo)            // Rebound of the ball on the right pad
             {
                 onTouch.Play();                                                 // Play sound on touch
                 left = true;

@@ -48,12 +48,13 @@
             this.gameover = new System.Windows.Forms.Label();
             this.Back_menu = new System.Windows.Forms.Label();
             this.Restart = new System.Windows.Forms.Label();
+            this.levelUp = new System.Windows.Forms.Timer(this.components);
+            this.wallTraining = new System.Windows.Forms.PictureBox();
             this.sideDown = new PongGames.picturebox();
             this.sideUp = new PongGames.picturebox();
             this.outLeft = new PongGames.picturebox();
             this.outRight = new PongGames.picturebox();
             this.ball = new PongGames.picturebox();
-            this.levelUp = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pad1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pad2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -66,6 +67,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wallTraining)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sideDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sideUp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.outLeft)).BeginInit();
@@ -253,6 +255,21 @@
             this.Restart.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.Restart.Click += new System.EventHandler(this.Restart_Click);
             // 
+            // levelUp
+            // 
+            this.levelUp.Enabled = true;
+            this.levelUp.Interval = 30000;
+            this.levelUp.Tick += new System.EventHandler(this.speedUp);
+            // 
+            // wallTraining
+            // 
+            this.wallTraining.BackColor = System.Drawing.Color.SlateGray;
+            this.wallTraining.Location = new System.Drawing.Point(879, -3);
+            this.wallTraining.Name = "wallTraining";
+            this.wallTraining.Size = new System.Drawing.Size(22, 506);
+            this.wallTraining.TabIndex = 23;
+            this.wallTraining.TabStop = false;
+            // 
             // sideDown
             // 
             this.sideDown.Location = new System.Drawing.Point(-6, 493);
@@ -295,18 +312,13 @@
             this.ball.TabIndex = 13;
             this.ball.TabStop = false;
             // 
-            // levelUp
-            // 
-            this.levelUp.Enabled = true;
-            this.levelUp.Interval = 30000;
-            this.levelUp.Tick += new System.EventHandler(this.speedUp);
-            // 
             // Pong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(944, 501);
+            this.Controls.Add(this.wallTraining);
             this.Controls.Add(this.Restart);
             this.Controls.Add(this.Back_menu);
             this.Controls.Add(this.gameover);
@@ -351,6 +363,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wallTraining)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sideDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sideUp)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.outLeft)).EndInit();
@@ -387,6 +400,7 @@
         private System.Windows.Forms.Label Back_menu;
         private System.Windows.Forms.Label Restart;
         private System.Windows.Forms.Timer levelUp;
+        private System.Windows.Forms.PictureBox wallTraining;
     }
 }
 

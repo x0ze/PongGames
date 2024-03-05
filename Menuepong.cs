@@ -13,17 +13,23 @@ namespace PongGames
 {
     public partial class Menuepong : Form
     {
-        bool Solo = false;
-        bool Duo = true;
+        public static bool Solo = false;
+        public static bool Duo = true;
         public Menuepong()
         {
             InitializeComponent();
+            Solo = false;
+            Duo = true;
         }
 
         private void Start_Click(object sender, EventArgs e)
         {
             if(Solo)
-            { }
+            {
+                this.Hide();
+                Pong Game = new Pong();
+                Game.Show();
+            }
 
             if (Duo)
             {
