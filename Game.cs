@@ -18,7 +18,7 @@ namespace PongGames
     public partial class Pong : Form
     {
         
-        bool upLeft, downLeft, upRight, downRight, right, left, upBall, downBall, gameOver = false;   // Initialize boolean var
+        bool upLeft, downLeft, upRight, downRight, moveLeft, moveRight, right, left, upBall, downBall, gameOver = false, cheat=false;   // Initialize boolean var
         SoundPlayer onTouch = new SoundPlayer(@"..\..\ressources\bip.wav");         // Initialize var for sounds
         SoundPlayer onGameOver = new SoundPlayer(@"..\..\ressources\gameover.wav"); // Initialize var for sounds
         SoundPlayer GTA = new SoundPlayer(@"..\..\ressources\musicGTA.wav");        // Initialize var for sounds
@@ -39,6 +39,7 @@ namespace PongGames
             Pause.Hide();                                                           // Hide Pause
             label1.Hide();
             label2.Hide();
+            password.Hide();
             if (Settings.difficult)
             {
                 speed = 25;
@@ -119,6 +120,14 @@ namespace PongGames
             {
                 downLeft = true;
             }
+            if (e.KeyCode == Keys.A)
+            {
+                moveLeft = true;
+            }
+            if (e.KeyCode == Keys.D)
+            {
+                moveRight = true;
+            }
             if (e.KeyCode == Keys.Up)
             {
                 upRight = true;
@@ -150,6 +159,22 @@ namespace PongGames
             {
                 downLeft = false;
             }
+            if (e.KeyCode == Keys.A)
+            {
+                moveLeft = false;
+            }
+            if (e.KeyCode == Keys.D)
+            {
+                moveRight = false;
+            }
+            if (e.KeyCode == Keys.Up)
+            {
+                upRight = false;
+            }
+            if (e.KeyCode == Keys.Down)
+            {
+                downRight = false;
+            }
             if (e.KeyCode == Keys.Up)
             {
                 upRight = false;
@@ -169,6 +194,17 @@ namespace PongGames
             if (downLeft == true && !pad1.Bounds.IntersectsWith(sideDown.Bounds))
             {
                 pad1.Top += speed;
+            }
+            if (cheat)
+            {
+                if (moveLeft == true && !pad1.Bounds.IntersectsWith(sideUp.Bounds) && !pad1.Bounds.IntersectsWith(outLeft.Bounds))
+                {
+                    pad1.Left -= speed;
+                }
+                if (moveRight == true && !pad1.Bounds.IntersectsWith(sideDown.Bounds) && !pad1.Bounds.IntersectsWith(outRight.Bounds))
+                {
+                    pad1.Left += speed;
+                }
             }
             if (Menuepong.Solo)
             {
@@ -309,12 +345,21 @@ namespace PongGames
             score2.Text = scoreRight.ToString();                              // Show the right player score
             if (nbrRebounds == 2)
             {
+                password.Show();
+                string passwd = password.Text;
                 label2.Show();
                 label1.Show();
                 movement.Stop();
                 if (Settings.soundOn)
                 {
                     GTA.Play();                                      // Play sound on touch
+                }
+                if (passwd == "Pablito")
+                {
+                    cheat = true;
+                    this.Hide();
+                    Pong Game = new Pong();
+                    Game.Show();
                 }
             }
         }
