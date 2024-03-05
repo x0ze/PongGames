@@ -27,6 +27,14 @@ namespace PongGames
             gameover.Hide();                                                        // Hide Game over
             Back_menu.Hide();                                                       // Hide Menu
             Restart.Hide();                                                         // Hide Restart
+            if (Settings.difficult)
+            {
+                speed = 25;
+            }
+            if (Settings.easy)
+            {
+                speed = 10;
+            }
         }
 
         private void Back_menu_Click(object sender, EventArgs e)                    // In game back menu
@@ -45,7 +53,19 @@ namespace PongGames
 
         private void speedUp(object sender, EventArgs e)                            // LevelUp (SpeedUp every 30 sec)
         {
-            speed += 1;
+            if(Settings.normal)
+            {
+                speed += 1;
+            }
+            if (Settings.difficult)
+            {
+                speed += 3;
+            }
+            if (Settings.easy)
+            {
+                speed = 10;
+            }
+
         }
 
         private void pictureBox7_Click(object sender, EventArgs e)                  // Hidden escape Menu (button on a picturebox of the net)

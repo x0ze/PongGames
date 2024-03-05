@@ -12,6 +12,7 @@ namespace PongGames
 {
     public partial class Settings : Form
     {
+        public static bool easy, normal=true, difficult;
         public Settings()
         {
             InitializeComponent();
@@ -19,17 +20,23 @@ namespace PongGames
 
         private void Difficult_Click(object sender, EventArgs e)
         {
-           
+           easy = false;
+           normal = false;
+           difficult = true;
         }
 
         private void Normal_Click(object sender, EventArgs e)
         {
-            
+            easy = false;
+            normal = true;
+            difficult = false;
         }
 
         private void Easy_Click(object sender, EventArgs e)
         {
-       
+            easy = true;
+            normal = false;
+            difficult = false;
         }
 
         private void Settings_Load(object sender, EventArgs e)
