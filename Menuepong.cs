@@ -18,8 +18,16 @@ namespace PongGames
         public Menuepong()
         {
             InitializeComponent();
-            Solo = false;
-            Duo = true;
+            if (Solo)
+            {
+                solo.BackColor = Color.Gray;
+                duo.BackColor = Color.Transparent;
+            }
+            if (Duo)
+            {
+                duo.BackColor = Color.Gray;
+                solo.BackColor = Color.Transparent;
+            }
         }
 
         private void Start_Click(object sender, EventArgs e)
