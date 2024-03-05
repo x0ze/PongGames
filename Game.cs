@@ -21,8 +21,10 @@ namespace PongGames
         bool upLeft, downLeft, upRight, downRight, right, left, upBall, downBall, gameOver = false;   // Initialize boolean var
         SoundPlayer onTouch = new SoundPlayer(@"..\..\ressources\bip.wav");         // Initialize var for sounds
         SoundPlayer onGameOver = new SoundPlayer(@"..\..\ressources\gameover.wav"); // Initialize var for sounds
+        SoundPlayer GTA = new SoundPlayer(@"..\..\ressources\musicGTA.wav");        // Initialize var for sounds
         int scoreLeft = 0, scoreRight = 0, seconde = 0;                             // Define var score to 0 on start
         int speed = 15;                                                             // Speed of the Game on start
+        int nbrRebounds;
 
         private void timer_Tick(object sender, EventArgs e)
         {
@@ -35,6 +37,8 @@ namespace PongGames
             Back_menu.Hide();                                                       // Hide Menu
             Restart.Hide();                                                         // Hide Restart
             Pause.Hide();                                                           // Hide Pause
+            label1.Hide();
+            label2.Hide();
             if (Settings.difficult)
             {
                 speed = 25;
@@ -208,6 +212,7 @@ namespace PongGames
             }
             if (ball.Bounds.IntersectsWith(pad2.Bounds) && Menuepong.Duo || ball.Bounds.IntersectsWith(wallTraining.Bounds) && Menuepong.Solo)            // Rebound of the ball on the right pad
             {
+                nbrRebounds += 1;
                 if (Settings.soundOn)
                 {
                     onTouch.Play();                                             // Play sound on touch
@@ -302,6 +307,16 @@ namespace PongGames
             }
             score1.Text = scoreLeft.ToString();                               // Show the Left player score
             score2.Text = scoreRight.ToString();                              // Show the right player score
+            if (nbrRebounds == 2)
+            {
+                label2.Show();
+                label1.Show();
+                movement.Stop();
+                if (Settings.soundOn)
+                {
+                    GTA.Play();                                      // Play sound on touch
+                }
+            }
         }
     }
 }
