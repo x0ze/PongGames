@@ -13,6 +13,8 @@ namespace PongGames
     public partial class Settings : Form
     {
         public static bool easy, normal=true, difficult, soundOn = true;
+
+        
         public Settings()
         {
             InitializeComponent();
@@ -25,6 +27,8 @@ namespace PongGames
             if(difficult)
                 Difficult.ForeColor = Color.Red;
         }
+
+       
 
         private void Difficult_Click(object sender, EventArgs e)
         {

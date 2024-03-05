@@ -77,12 +77,6 @@ namespace PongGames
 
         }
 
-        private void pictureBox7_Click(object sender, EventArgs e)                  // Hidden escape Menu (button on a picturebox of the net)
-        {
-            this.Hide();
-            Menuepong form3 = new Menuepong();
-            form3.Show();
-        }
 
         public Pong()                                                               // Game Form (Windows)
         {
@@ -247,6 +241,7 @@ namespace PongGames
                     gameover.Show();
                     Back_menu.Show();
                     Restart.Show();
+                    gameOver = true;
                 }
                 upBall = false;
                 downBall = false;

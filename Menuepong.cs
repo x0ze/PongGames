@@ -80,5 +80,6 @@ namespace PongGames
             Duo = true;  
             Solo = false;   
         }
+      
     }
 }
