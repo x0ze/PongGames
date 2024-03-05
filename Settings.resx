@@ -121,7 +121,7 @@
   <data name="label1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
-        9QAAAPUBxvGL9gAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAHrSURBVFhHrZc/
+        9AAAAPQBFLZpEgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAHrSURBVFhHrZc/
         TsMwFMYNA2wg7sDGiOIsTHWWHoABBjgFA0hIwAQ7E53gBIAEQuIAIAGCA8CCWDq0oCYVbOE9x66o80r8
         75O+IXm2f19fkzhhWkXG1wvBX4aCv+Yi2S9Xl2ZUKVi4Vi7Sg1zwN2QULb6mSpUAvgWFctzpddlenFVD
         vFXB+bm5/lAku3IAHGyaRe08Sy5COiHhsAa1tnTGN5hqCz0A7BuiEQ7Gvxvb36eKf+0awgau3MMOdIhC
@@ -133,10 +133,10 @@
         9gs558Sg7hWhMgAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="label2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="sound.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
-        +gAAAPoBsD8l7AAAAhJJREFUWEfFl72PTUEYh1cUJD4SNYlEYwtLQqugIz7+DKsh4jP+A1mCSk1LfIWs
+        +QAAAPkBHYYEgQAAAhJJREFUWEfFl72PTUEYh1cUJD4SNYlEYwtLQqugIz7+DKsh4jP+A1mCSk1LfIWs
         3YhES6MUS0JJybYYzzPu3BzHzLnn2nH3SZ7kvr87xXvOzDkzZyqEsKpmwzHdgvfwFW4YZL3NhmO4C99j
         Yi/mxhXNhj09hl+xyT7MjS2aDUe4Bi/hD2zz3xvYjI+wRKkB18YLvIlewPC/5qBR7sS32EWpge34HeUy
         Dv9rDuoyN985uqbgHIpTdxRj3h7Utmu+czQb2IjP8Voju43yCdfhsIGDeCLjMxyHZgM7MN12L8LMpj4b
@@ -148,7 +148,7 @@
         NEz9Aou0rj6GpMBtAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="label3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="mute.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAB
         DAAAAQwBlqf4UAAAAY9JREFUWEe9lz1KA0EcRxUtrCy8goKi4Ad4Er/wCja2XkE8hieIpQcQLETsrCxi

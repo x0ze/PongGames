@@ -33,8 +33,8 @@
             this.Normal = new System.Windows.Forms.Label();
             this.Easy = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.sound = new System.Windows.Forms.Label();
+            this.mute = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // Difficult
@@ -96,27 +96,27 @@
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // label2
+            // sound
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label2.Image = ((System.Drawing.Image)(resources.GetObject("label2.Image")));
-            this.label2.Location = new System.Drawing.Point(-2, 1);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(76, 52);
-            this.label2.TabIndex = 8;
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            this.sound.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.sound.Image = ((System.Drawing.Image)(resources.GetObject("sound.Image")));
+            this.sound.Location = new System.Drawing.Point(-2, 1);
+            this.sound.Name = "sound";
+            this.sound.Size = new System.Drawing.Size(76, 52);
+            this.sound.TabIndex = 8;
+            this.sound.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.sound.Click += new System.EventHandler(this.sound_Click);
             // 
-            // label3
+            // mute
             // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label3.Image = ((System.Drawing.Image)(resources.GetObject("label3.Image")));
-            this.label3.Location = new System.Drawing.Point(-2, 1);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(65, 52);
-            this.label3.TabIndex = 9;
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+            this.mute.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.mute.Image = ((System.Drawing.Image)(resources.GetObject("mute.Image")));
+            this.mute.Location = new System.Drawing.Point(-2, 1);
+            this.mute.Name = "mute";
+            this.mute.Size = new System.Drawing.Size(65, 52);
+            this.mute.TabIndex = 9;
+            this.mute.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.mute.Click += new System.EventHandler(this.mute_Click);
             // 
             // Settings
             // 
@@ -124,8 +124,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.mute);
+            this.Controls.Add(this.sound);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Easy);
             this.Controls.Add(this.Normal);
@@ -150,7 +150,7 @@
         private System.Windows.Forms.Label Normal;
         private System.Windows.Forms.Label Easy;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label sound;
+        private System.Windows.Forms.Label mute;
     }
 }

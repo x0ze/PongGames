@@ -12,7 +12,7 @@ namespace PongGames
 {
     public partial class Settings : Form
     {
-        public static bool easy, normal=true, difficult, soundon = true, soundoff;
+        public static bool easy, normal=true, difficult, soundOn = true;
         public Settings()
         {
             InitializeComponent();
@@ -24,12 +24,6 @@ namespace PongGames
 
             if(difficult)
                 Difficult.ForeColor = Color.Red;
-            
-            if(soundon)
-                label2.Show();
-
-            if(soundoff)
-                label3.Show();
         }
 
         private void Difficult_Click(object sender, EventArgs e)
@@ -38,13 +32,13 @@ namespace PongGames
             Normal.ForeColor = Color.White;
             Easy.ForeColor = Color.White;
             easy = false;
-           normal = false;
-           difficult = true;
+            normal = false;
+            difficult = true;
         }
 
         private void Normal_Click(object sender, EventArgs e)
         {
-            Difficult.ForeColor = Color.Red;
+            Difficult.ForeColor = Color.White;
             Normal.ForeColor = Color.Yellow;
             Easy.ForeColor = Color.White;
             easy = false;
@@ -64,7 +58,16 @@ namespace PongGames
 
         private void Settings_Load(object sender, EventArgs e)
         {
-            label3.Hide();
+            if (!soundOn)
+            {
+                mute.Show();
+                sound.Hide();
+            }
+            else
+            {
+                mute.Hide();
+                sound.Show();
+            }
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -74,20 +77,18 @@ namespace PongGames
             menuewindows.Show();
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void sound_Click(object sender, EventArgs e)
         {
-            label2.Hide();
-            label3.Show();
-            soundon = false;
-            soundoff = true;
+            soundOn = false;
+            mute.Show();
+            sound.Hide();
         }
 
-        private void label3_Click(object sender, EventArgs e)
+        private void mute_Click(object sender, EventArgs e)
         {
-            label3.Hide();
-            label2.Show();
-            soundon = true;
-            soundoff = false;
+            soundOn = true;
+            mute.Hide();
+            sound.Show();
         }
     }
 }

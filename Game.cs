@@ -151,7 +151,10 @@ namespace PongGames
 
             if (ball.Bounds.IntersectsWith(pad1.Bounds))                        // Rebound of the ball on the left pad
             {
-                onTouch.Play();                                                 // Play sound on touch
+                if (Settings.soundOn)
+                {   
+                    onTouch.Play();                                             // Play sound on touch
+                }                                                 
                 left = false;
                 right = true;
                 if (upLeft == true)
