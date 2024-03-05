@@ -278,9 +278,9 @@
             this.Pause.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Pause.ForeColor = System.Drawing.Color.Transparent;
             this.Pause.Image = ((System.Drawing.Image)(resources.GetObject("Pause.Image")));
-            this.Pause.Location = new System.Drawing.Point(418, 188);
+            this.Pause.Location = new System.Drawing.Point(419, 192);
             this.Pause.Name = "Pause";
-            this.Pause.Size = new System.Drawing.Size(135, 134);
+            this.Pause.Size = new System.Drawing.Size(135, 101);
             this.Pause.TabIndex = 24;
             this.Pause.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.Pause.Click += new System.EventHandler(this.Pause_Click);

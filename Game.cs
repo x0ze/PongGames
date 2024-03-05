@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Media;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Rebar;
 
 namespace PongGames
 {
@@ -21,6 +22,7 @@ namespace PongGames
         SoundPlayer onTouch = new SoundPlayer(@"..\..\ressources\bip.wav");         // Initialize var for sounds
         int scoreLeft = 0, scoreRight = 0;                                          // Define var score to 0 on start
         int speed = 15;                                                             // Speed of the Game on start
+        byte starting;
 
         private void Pong_Load(object sender, EventArgs e)                          // Load game menu
         {
@@ -66,7 +68,7 @@ namespace PongGames
             {
                 speed += 1;
             }
-            if (Settings.difficult)
+            if (Settings.difficult)  
             {
                 speed += 3;
             }
@@ -80,7 +82,20 @@ namespace PongGames
 
         public Pong()                                                               // Game Form (Windows)
         {
-            left = true;                                                            // Starting player
+            Random random = new Random();                                          // Starting player (random)
+            int randomnumber = random.Next(1, 3);
+            
+            if (randomnumber == 1)
+            {
+                left = true;
+                right = false;
+             }                                                                        
+            else
+            {
+                right = true;
+                left = false;
+            }
+
             InitializeComponent();
         }
 
