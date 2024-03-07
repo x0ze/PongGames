@@ -15,6 +15,7 @@ namespace PongGames
     {
         public static bool Solo = false;
         public static bool Duo = true;
+        public static bool cheat = false;
         public Menuepong()
         {
             InitializeComponent();

@@ -18,7 +18,7 @@ namespace PongGames
     public partial class Pong : Form
     {
         
-        bool upLeft, downLeft, upRight, downRight, moveLeft, moveRight, right, left, upBall, downBall, gameOver = false, cheat=false;   // Initialize boolean var
+        bool upLeft, downLeft, upRight, downRight, moveLeft, moveRight, right, left, upBall, downBall, gameOver = false, win;   // Initialize boolean var
         SoundPlayer onTouch = new SoundPlayer(@"..\..\ressources\bip.wav");         // Initialize var for sounds
         SoundPlayer onGameOver = new SoundPlayer(@"..\..\ressources\gameover.wav"); // Initialize var for sounds
         SoundPlayer GTA = new SoundPlayer(@"..\..\ressources\musicGTA.wav");        // Initialize var for sounds
@@ -26,11 +26,6 @@ namespace PongGames
         int speed = 15;                                                             // Speed of the Game on start
         int nbrRebounds;
 
-        private void timer_Tick(object sender, EventArgs e)
-        {
-            seconde += 1;
-            Timertime.Text = seconde.ToString();
-        }
         private void Pong_Load(object sender, EventArgs e)                          // Load game menu
         {
             gameover.Hide();                                                        // Hide Game over
@@ -195,7 +190,7 @@ namespace PongGames
             {
                 pad1.Top += speed;
             }
-            if (cheat)
+            if (Menuepong.cheat)
             {
                 if (moveLeft == true && !pad1.Bounds.IntersectsWith(sideUp.Bounds) && !pad1.Bounds.IntersectsWith(outLeft.Bounds))
                 {
@@ -229,7 +224,7 @@ namespace PongGames
 
             if (ball.Bounds.IntersectsWith(pad1.Bounds))                        // Rebound of the ball on the left pad
             {
-                if (Settings.soundOn)
+                if (Settings.soundOn && !Menuepong.cheat)
                 {   
                     onTouch.Play();                                             // Play sound on touch
                 }                                                 
@@ -311,6 +306,7 @@ namespace PongGames
                     Timer.Stop();
                     movement.Stop();
                     gameover.Show();
+                    Menuepong.cheat = false;
                     Back_menu.Show();
                     Restart.Show();
                     gameOver = true;
@@ -328,6 +324,7 @@ namespace PongGames
                     Timer.Stop();
                     movement.Stop();
                     gameover.Show();
+                    Menuepong.cheat = false;
                     if (Settings.soundOn)
                     {
                         onGameOver.Play();                                      // Play sound on touch
@@ -343,23 +340,33 @@ namespace PongGames
             }
             score1.Text = scoreLeft.ToString();                               // Show the Left player score
             score2.Text = scoreRight.ToString();                              // Show the right player score
-            if (nbrRebounds == 2)
+        }
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            seconde += 1;
+            Timertime.Text = seconde.ToString();
+            if (nbrRebounds == 2 && Menuepong.Solo)
             {
                 password.Show();
                 string passwd = password.Text;
                 label2.Show();
                 label1.Show();
                 movement.Stop();
-                if (Settings.soundOn)
+                if (Settings.soundOn && win != true)
                 {
                     GTA.Play();                                      // Play sound on touch
+                    win = true;
                 }
                 if (passwd == "Pablito")
                 {
-                    cheat = true;
+                    Menuepong.cheat = true;
                     this.Hide();
+                    password.Hide();
+                    Menuepong.Solo = false;
+                    Menuepong.Duo = true;
                     Pong Game = new Pong();
                     Game.Show();
+                    Timer.Stop();
                 }
             }
         }
