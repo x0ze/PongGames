@@ -12,10 +12,9 @@ namespace PongGames
 {
     public partial class Settings : Form
     {
-        public static bool easy, normal=true, difficult, soundOn = true;
+        public static bool easy, normal=true, difficult, soundOn = true; // Initialize all boolean vars in public static to be accessible in others forms
 
-        
-        public Settings()
+        public Settings()                                               // Difficulty background colors persistence
         {
             InitializeComponent();
             if(easy)
@@ -30,7 +29,7 @@ namespace PongGames
 
        
 
-        private void Difficult_Click(object sender, EventArgs e)
+        private void Difficult_Click(object sender, EventArgs e)        // Diffcult color (red)
         {
             Difficult.ForeColor = Color.Red;
             Normal.ForeColor = Color.White;
@@ -40,7 +39,7 @@ namespace PongGames
             difficult = true;
         }
 
-        private void Normal_Click(object sender, EventArgs e)
+        private void Normal_Click(object sender, EventArgs e)           // Normal color (yellow)
         {
             Difficult.ForeColor = Color.White;
             Normal.ForeColor = Color.Yellow;
@@ -50,7 +49,7 @@ namespace PongGames
             difficult = false;
         }
 
-        private void Easy_Click(object sender, EventArgs e)
+        private void Easy_Click(object sender, EventArgs e)             // Easy color (green)
         {
             Difficult.ForeColor = Color.White;
             Normal.ForeColor = Color.White;
@@ -60,7 +59,7 @@ namespace PongGames
             difficult = false;
         }
 
-        private void Settings_Load(object sender, EventArgs e)
+        private void Settings_Load(object sender, EventArgs e)         // Sound / mute button persistence
         {
             if (!soundOn)
             {
@@ -74,21 +73,21 @@ namespace PongGames
             }
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)       // Exit settings, return back to main menu
         {
             this.Hide();
             Menuepong menuewindows = new Menuepong();
             menuewindows.Show();
         }
 
-        private void sound_Click(object sender, EventArgs e)
+        private void sound_Click(object sender, EventArgs e)        // Sound on button
         {
             soundOn = false;
             mute.Show();
             sound.Hide();
         }
 
-        private void mute_Click(object sender, EventArgs e)
+        private void mute_Click(object sender, EventArgs e)         // Sound off / mute button
         {
             soundOn = true;
             mute.Hide();

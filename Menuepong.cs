@@ -13,18 +13,18 @@ namespace PongGames
 {
     public partial class Menuepong : Form
     {
-        public static bool Solo = false;
-        public static bool Duo = true;
-        public static bool cheat = false;
+        public static bool Solo = false;                            // Solo mode not in favorite by default
+        public static bool Duo = true;                              // Duo mode in favorite by default
+        public static bool cheat = false;                           // Cheat mode disabled by default
         public Menuepong()
         {
             InitializeComponent();
-            if (Solo)
+            if (Solo)                                               // Solo mode button
             {
                 solo.BackColor = Color.Gray;
                 duo.BackColor = Color.Transparent;
             }
-            if (Duo)
+            if (Duo)                                                // Duo mode button
             {
                 duo.BackColor = Color.Gray;
                 solo.BackColor = Color.Transparent;
@@ -33,14 +33,14 @@ namespace PongGames
 
         private void Start_Click(object sender, EventArgs e)
         {
-            if(Solo)
+            if(Solo)                                                // Start solo game
             {
                 this.Hide();
                 Pong Game = new Pong();
                 Game.Show();
             }
 
-            if (Duo)
+            if (Duo)                                                // Start duo game
             {
                 this.Hide();
                 Pong Game = new Pong();
@@ -49,24 +49,19 @@ namespace PongGames
          
         }
 
-        private void Exit_Click(object sender, EventArgs e)
+        private void Exit_Click(object sender, EventArgs e)         // Exit the game
         {
             Environment.Exit(0);
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void label2_Click(object sender, EventArgs e)       // Settings menu
         {
             this.Hide();
             Settings settingswindows = new Settings();
             settingswindows.Show();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void solo_Click(object sender, EventArgs e)
+        private void solo_Click(object sender, EventArgs e)         // Solo mode enabled
         {
             solo.BackColor = Color.Gray;
             duo.BackColor = Color.Transparent;
@@ -74,7 +69,7 @@ namespace PongGames
             Solo = true;
         }
 
-        private void duo_Click(object sender, EventArgs e)
+        private void duo_Click(object sender, EventArgs e)          // Duo mode enabled
         {
             duo.BackColor = Color.Gray;
             solo.BackColor = Color.Transparent;

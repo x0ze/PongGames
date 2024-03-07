@@ -18,13 +18,13 @@ namespace PongGames
     public partial class Pong : Form
     {
         
-        bool upLeft, downLeft, upRight, downRight, moveLeft, moveRight, right, left, upBall, downBall, gameOver = false, win;   // Initialize boolean var
+        bool upLeft, downLeft, upRight, downRight, moveLeft, moveRight, right, left, upBall, downBall, gameOver = false, win;   // Initialize all boolean vars
         SoundPlayer onTouch = new SoundPlayer(@"..\..\ressources\bip.wav");         // Initialize var for sounds
         SoundPlayer onGameOver = new SoundPlayer(@"..\..\ressources\gameover.wav"); // Initialize var for sounds
         SoundPlayer GTA = new SoundPlayer(@"..\..\ressources\musicGTA.wav");        // Initialize var for sounds
         int scoreLeft = 0, scoreRight = 0, seconde = 0;                             // Define var score to 0 on start
         int speed = 15;                                                             // Speed of the Game on start
-        int nbrRebounds;
+        int nbrRebounds;                                                            // Number of rebounds on the Training wall (solo mode)
 
         private void Pong_Load(object sender, EventArgs e)                          // Load game menu
         {
@@ -345,7 +345,7 @@ namespace PongGames
         {
             seconde += 1;
             Timertime.Text = seconde.ToString();
-            if (nbrRebounds == 2 && Menuepong.Solo)
+            if (nbrRebounds == 2 && Menuepong.Solo)                           // Easter Egg
             {
                 password.Show();
                 string passwd = password.Text;
@@ -354,12 +354,12 @@ namespace PongGames
                 movement.Stop();
                 if (Settings.soundOn && win != true)
                 {
-                    GTA.Play();                                      // Play sound on touch
+                    GTA.Play();                                              // Play sound easter egg
                     win = true;
                 }
-                if (passwd == "Pablito")
+                if (passwd == "Pablito")                                     // Check password to enabled cheat mode
                 {
-                    Menuepong.cheat = true;
+                    Menuepong.cheat = true;                                  // Enable cheat
                     this.Hide();
                     password.Hide();
                     Menuepong.Solo = false;
