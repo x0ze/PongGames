@@ -19,33 +19,29 @@ namespace PongGames
     {
         
         bool upLeft, downLeft, upRight, downRight, moveLeft, moveRight, right, left, upBall, downBall, gameOver = false, win;   // Initialize all boolean vars
-        SoundPlayer onTouch = new SoundPlayer(@"..\..\ressources\bip.wav");         // Initialize var for sounds
-        SoundPlayer onGameOver = new SoundPlayer(@"..\..\ressources\gameover.wav"); // Initialize var for sounds
-        SoundPlayer GTA = new SoundPlayer(@"..\..\ressources\musicGTA.wav");        // Initialize var for sounds
-        int scoreLeft = 0, scoreRight = 0, seconde = 0;                             // Define var score to 0 on start
-        int speed = 15;                                                             // Speed of the Game on start
-        int nbrRebounds;                                                            // Number of rebounds on the Training wall (solo mode)
+        SoundPlayer onTouch = new SoundPlayer(@"..\..\ressources\bip.wav");                                                     // Initialize var for sounds
+        SoundPlayer onGameOver = new SoundPlayer(@"..\..\ressources\gameover.wav");                                             // Initialize var for sounds
+        SoundPlayer GTA = new SoundPlayer(@"..\..\ressources\musicGTA.wav");                                                    // Initialize var for sounds
+        int scoreLeft = 0, scoreRight = 0, seconde = 0;                                                                         // Define var score to 0 on start
+        int speed = 15;                                                                                                         // Speed of the Game on start
+        int nbrRebounds;                                                                                                        // Number of rebounds on the Training wall (solo mode)
 
-        private void Pong_Load(object sender, EventArgs e)                          // Load game menu
+        private void Pong_Load(object sender, EventArgs e)                                                                      // Load game menu
         {
-            gameover.Hide();                                                        // Hide Game over
-            Back_menu.Hide();                                                       // Hide Menu
-            Restart.Hide();                                                         // Hide Restart
-            Pause.Hide();                                                           // Hide Pause
+            gameover.Hide();                                                                                                    // Hide Game over
+            Back_menu.Hide();                                                                                                   // Hide Menu
+            Restart.Hide();                                                                                                     // Hide Restart
+            Pause.Hide();                                                                                                       // Hide Pause
             label1.Hide();
             label2.Hide();
             password.Hide();
-            if (Settings.difficult)
-            {
+            if (Settings.difficult)                                                                                             // Difficult mode starting speed
                 speed = 25;
-            }
-            if (Settings.easy)
-            {
+            if (Settings.easy)                                                                                                  // Easy mode starting speed
                 speed = 10;
-            }
         }
 
-        private void Pause_Click(object sender, EventArgs e)
+        private void Pause_Click(object sender, EventArgs e)                                                                    // Resume button
         {
                 Timer.Start();
                 movement.Start();
@@ -54,48 +50,41 @@ namespace PongGames
                 Pause.Hide();
         }
 
-        private void Back_menu_Click(object sender, EventArgs e)                    // In game back menu
+        private void Back_menu_Click(object sender, EventArgs e)                                                                // In game back menu
         {
             this.Hide();                                    
             Menuepong form3 = new Menuepong();
             form3.Show();
         }
 
-        private void Restart_Click(object sender, EventArgs e)                      // Restart Game
+        private void Restart_Click(object sender, EventArgs e)                                                                  // Restart Game
         {
             this.Hide();
             Pong pong = new Pong();
             pong.Show();
         }
 
-        private void speedUp(object sender, EventArgs e)                            // LevelUp (SpeedUp every 30 sec)
+        private void speedUp(object sender, EventArgs e)                                                                        // LevelUp (SpeedUp every 30 sec)
         {
             if(Settings.normal)
-            {
                 speed += 1;
-            }
-            if (Settings.difficult)  
-            {
+            if (Settings.difficult)
                 speed += 3;
-            }
             if (Settings.easy)
-            {
                 speed = 10;
-            }
 
         }
 
-
-        public Pong()                                                               // Game Form (Windows)
+        public Pong()                                                                                                           // Game Form (Windows)
         {
-            Random random = new Random();                                          // Starting player (random)
+            Random random = new Random();                                                                                       // Starting player (random)
             int randomnumber = random.Next(1, 3);
             
             if (randomnumber == 1)
             {
                 left = true;
                 right = false;
-             }                                                                        
+             }                                                                                                                    
             else
             {
                 right = true;
@@ -105,33 +94,21 @@ namespace PongGames
             InitializeComponent();
         }
 
-        private void KeyIsDown(object sender, KeyEventArgs e)                       // Key click
+        private void KeyIsDown(object sender, KeyEventArgs e)                                                                   // Key pressed
         {
             if (e.KeyCode == Keys.W)
-            {
                 upLeft = true;
-            }
             if (e.KeyCode == Keys.S)
-            {
                 downLeft = true;
-            }
             if (e.KeyCode == Keys.A)
-            {
                 moveLeft = true;
-            }
             if (e.KeyCode == Keys.D)
-            {
                 moveRight = true;
-            }
             if (e.KeyCode == Keys.Up)
-            {
                 upRight = true;
-            }
             if (e.KeyCode == Keys.Down)
-            {
                 downRight = true;
-            }
-            if (gameOver == false)
+            if (gameOver == false)                                                                                              // Pause menu
             {
                 if (e.KeyCode == Keys.Space || e.KeyCode == Keys.Escape)
                 {
@@ -144,98 +121,68 @@ namespace PongGames
             }
             
         }
-        private void KeyIsUp(object sender, KeyEventArgs e)                     // Key not click
+        private void KeyIsUp(object sender, KeyEventArgs e)                                                                     // Key not pressed
         {
             if (e.KeyCode == Keys.W)
-            {
                 upLeft = false;
-            }
             if (e.KeyCode == Keys.S)
-            {
                 downLeft = false;
-            }
             if (e.KeyCode == Keys.A)
-            {
                 moveLeft = false;
-            }
             if (e.KeyCode == Keys.D)
-            {
                 moveRight = false;
-            }
             if (e.KeyCode == Keys.Up)
-            {
                 upRight = false;
-            }
             if (e.KeyCode == Keys.Down)
-            {
                 downRight = false;
-            }
             if (e.KeyCode == Keys.Up)
-            {
                 upRight = false;
-            }
             if (e.KeyCode == Keys.Down)
-            {
                 downRight = false;
-            }
         }
 
-        private void MoveEvent(object sender, EventArgs e)                      // All movement in the game
+        private void MoveEvent(object sender, EventArgs e)                                                                      // All movement in the game
         {
-            if (upLeft == true && !pad1.Bounds.IntersectsWith(sideUp.Bounds))   
-            {
+            if (upLeft && !pad1.Bounds.IntersectsWith(sideUp.Bounds))                                                   // Move pad1 on top
                 pad1.Top -= speed;
-            }
-            if (downLeft == true && !pad1.Bounds.IntersectsWith(sideDown.Bounds))
-            {
+            if (downLeft && !pad1.Bounds.IntersectsWith(sideDown.Bounds))                                               // Move pad1 on bottom
                 pad1.Top += speed;
-            }
-            if (Menuepong.cheat)
+            if (Menuepong.cheat)                                                                                                // Cheat feature (pad1 can move left and right)
             {
-                if (moveLeft == true && !pad1.Bounds.IntersectsWith(sideUp.Bounds) && !pad1.Bounds.IntersectsWith(outLeft.Bounds))
-                {
+                if (moveLeft && !pad1.Bounds.IntersectsWith(sideUp.Bounds) && !pad1.Bounds.IntersectsWith(outLeft.Bounds))
                     pad1.Left -= speed;
-                }
-                if (moveRight == true && !pad1.Bounds.IntersectsWith(sideDown.Bounds) && !pad1.Bounds.IntersectsWith(outRight.Bounds))
-                {
+                if (moveRight && !pad1.Bounds.IntersectsWith(sideDown.Bounds) && !pad1.Bounds.IntersectsWith(outRight.Bounds))
                     pad1.Left += speed;
-                }
             }
-            if (Menuepong.Solo)
+            if (Menuepong.Solo)                                                                                                 // Solo mode
             {
                 score1.Hide();
                 pad2.Hide();
                 wallTraining.Show();
             }
-            if(Menuepong.Duo)                                                   // Duo Mode
+            if(Menuepong.Duo)                                                                                                   // Duo mode
             {
                 Timertime.Hide();
                 pad2.Show();
                 wallTraining.Hide();
-                if (upRight == true && !pad2.Bounds.IntersectsWith(sideUp.Bounds))
-                {
+                if (upRight && !pad2.Bounds.IntersectsWith(sideUp.Bounds))                                              // Move pad2 on top
                     pad2.Top -= speed;
-                }
-                if (downRight == true && !pad2.Bounds.IntersectsWith(sideDown.Bounds))
-                {
+                if (downRight && !pad2.Bounds.IntersectsWith(sideDown.Bounds))
                     pad2.Top += speed;
-                }
             }
 
-            if (ball.Bounds.IntersectsWith(pad1.Bounds))                        // Rebound of the ball on the left pad
+            if (ball.Bounds.IntersectsWith(pad1.Bounds))                                                                        // Rebound of the ball on the left pad
             {
                 if (Settings.soundOn && !Menuepong.cheat)
-                {   
-                    onTouch.Play();                                             // Play sound on touch
-                }                                                 
+                    onTouch.Play();                                                                                             // Play sound on touch
                 left = false;
                 right = true;
-                if (upLeft == true)
+                if (upLeft)
                 {
                     upBall = true;
                     downBall = false;
                 }
-                if (downLeft == true)
+                if (downLeft)
                 {
                     upBall = false;
                     downBall = true;
@@ -245,107 +192,85 @@ namespace PongGames
             {
                 nbrRebounds += 1;
                 if (Settings.soundOn)
-                {
-                    onTouch.Play();                                             // Play sound on touch
-                }                                                   
+                    onTouch.Play();                                                                                             // Play sound on touch                  
                 left = true;
                 right = false;
                 if(Menuepong.Duo)
                 {
-                    if (upRight == true)
+                    if (upRight)
                     {
                         upBall = true;
                         downBall = false;
                     }
-                    if (downRight == true)
+                    if (downRight)
                     {
                         upBall = false;
                         downBall = true;
                     }
                 }
             }
-            if (left==true)                                                     // Ball move left
+            if (left)                                                                                                     // Ball move left
             {
                 ball.Left -=speed;
-                if (upBall == true)
-                {
+                if (upBall)
                     ball.Top -=speed;
-                }
-                if (downBall == true)
-                {
+                if (downBall)
                     ball.Top +=speed;
-                }
             }
-            if (right == true)                                                  // Ball move right
+            if (right)                                                                                                  // Ball move right
             {
                 ball.Left += speed;
-                if (upBall == true)
-                {
+                if (upBall)
                     ball.Top -= speed;
-                }
-                if (downBall == true)
-                {
+                if (downBall)
                     ball.Top += speed;
-                }
             }
-            if (ball.Bounds.IntersectsWith(sideUp.Bounds))                      // Rebound on the upper side of the game board
+            if (ball.Bounds.IntersectsWith(sideUp.Bounds))                                                                      // Rebound on the upper side of the game board
             {
                 upBall= false;
                 downBall = true;
             }
-            if (ball.Bounds.IntersectsWith(sideDown.Bounds))                    // Rebound on the bottom side of the game board
+            if (ball.Bounds.IntersectsWith(sideDown.Bounds))                                                                    // Rebound on the bottom side of the game board
             {
                 upBall = true;
                 downBall = false;
             }
-            if (ball.Bounds.IntersectsWith(outRight.Bounds) )                   // Player Left scored
+            if (ball.Bounds.IntersectsWith(outRight.Bounds) )                                                                   // Player Left scored
             {
                 scoreLeft += 1;
-                if(scoreLeft == 5)
-                {
-                    Timer.Stop();
-                    movement.Stop();
-                    gameover.Show();
-                    Menuepong.cheat = false;
-                    Back_menu.Show();
-                    Restart.Show();
-                    gameOver = true;
-                }
                 upBall = false;
                 downBall = false;
-                ball.Left = 480;
-                ball.Top = 270;
+                ball.Left = this.Width / 2;
+                ball.Top = this.Height / 2;
             }
-            if (ball.Bounds.IntersectsWith(outLeft.Bounds))                     // Player Right scored
+            if (ball.Bounds.IntersectsWith(outLeft.Bounds))                                                                     // Player Right scored
             {
                 scoreRight += 1;
-                if (scoreRight == 5)
-                {
-                    Timer.Stop();
-                    movement.Stop();
-                    gameover.Show();
-                    Menuepong.cheat = false;
-                    if (Settings.soundOn)
-                    {
-                        onGameOver.Play();                                      // Play sound on touch
-                    }
-                    Back_menu.Show();
-                    Restart.Show();
-                    gameOver = true;
-                }
                 upBall = false;
                 downBall = false;
-                ball.Left = 480;
-                ball.Top = 270;
+                ball.Left = this.Width/2;
+                ball.Top = this.Height/2;
             }
-            score1.Text = scoreLeft.ToString();                               // Show the Left player score
-            score2.Text = scoreRight.ToString();                              // Show the right player score
+            score1.Text = scoreLeft.ToString();                                                                                 // Show the Left player score
+            score2.Text = scoreRight.ToString();                                                                                // Show the right player score
+            if (scoreRight == 5 || scoreLeft == 5)                                                                              // Game over
+            {
+                Timer.Stop();
+                movement.Stop();
+                gameover.Show();
+                Menuepong.cheat = false;
+                if (Settings.soundOn)
+                    onGameOver.Play();                                                                                          // Play game over sound
+                Back_menu.Show();
+                Restart.Show();
+                gameOver = true;
+            }
         }
         private void timer_Tick(object sender, EventArgs e)
         {
             seconde += 1;
             Timertime.Text = seconde.ToString();
-            if (nbrRebounds == 2 && Menuepong.Solo)                           // Easter Egg
+            if (nbrRebounds == 2 && Menuepong.Solo)                                                                             //Easter Egg
             {
                 password.Show();
                 string passwd = password.Text;
@@ -354,12 +279,12 @@ namespace PongGames
                 movement.Stop();
                 if (Settings.soundOn && win != true)
                 {
-                    GTA.Play();                                              // Play sound easter egg
+                    GTA.Play();                                                                                                 // Play sound easter egg
                     win = true;
                 }
-                if (passwd == "Pablito")                                     // Check password to enabled cheat mode
+                if (passwd == "Pablito")                                                                                        // Check password to enabled cheat mode
                 {
-                    Menuepong.cheat = true;                                  // Enable cheat
+                    Menuepong.cheat = true;                                                                                     // Enable cheat
                     this.Hide();
                     password.Hide();
                     Menuepong.Solo = false;

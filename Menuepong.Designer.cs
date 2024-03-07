@@ -32,7 +32,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.Exit = new System.Windows.Forms.Label();
             this.Start = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.settings = new System.Windows.Forms.Label();
             this.solo = new System.Windows.Forms.Label();
             this.duo = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -80,16 +80,16 @@
             this.Start.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.Start.Click += new System.EventHandler(this.Start_Click);
             // 
-            // label2
+            // settings
             // 
-            this.label2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label2.Image = ((System.Drawing.Image)(resources.GetObject("label2.Image")));
-            this.label2.Location = new System.Drawing.Point(744, -5);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 61);
-            this.label2.TabIndex = 6;
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            this.settings.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.settings.Image = ((System.Drawing.Image)(resources.GetObject("settings.Image")));
+            this.settings.Location = new System.Drawing.Point(744, -5);
+            this.settings.Name = "settings";
+            this.settings.Size = new System.Drawing.Size(58, 61);
+            this.settings.TabIndex = 6;
+            this.settings.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.settings.Click += new System.EventHandler(this.settings_Click);
             // 
             // solo
             // 
@@ -131,7 +131,7 @@
             this.ClientSize = new System.Drawing.Size(800, 446);
             this.Controls.Add(this.duo);
             this.Controls.Add(this.solo);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.settings);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Exit);
             this.Controls.Add(this.Start);
@@ -152,7 +152,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label Exit;
         private System.Windows.Forms.Label Start;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label settings;
         private System.Windows.Forms.Label solo;
         private System.Windows.Forms.Label duo;
     }

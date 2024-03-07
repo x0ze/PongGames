@@ -32,7 +32,7 @@
             this.Difficult = new System.Windows.Forms.Label();
             this.Normal = new System.Windows.Forms.Label();
             this.Easy = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.backMenu = new System.Windows.Forms.Label();
             this.sound = new System.Windows.Forms.Label();
             this.mute = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -85,16 +85,16 @@
             this.Easy.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.Easy.Click += new System.EventHandler(this.Easy_Click);
             // 
-            // label1
+            // backMenu
             // 
-            this.label1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label1.Image = ((System.Drawing.Image)(resources.GetObject("label1.Image")));
-            this.label1.Location = new System.Drawing.Point(745, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 44);
-            this.label1.TabIndex = 7;
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.backMenu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.backMenu.Image = ((System.Drawing.Image)(resources.GetObject("backMenu.Image")));
+            this.backMenu.Location = new System.Drawing.Point(745, 9);
+            this.backMenu.Name = "backMenu";
+            this.backMenu.Size = new System.Drawing.Size(43, 44);
+            this.backMenu.TabIndex = 7;
+            this.backMenu.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.backMenu.Click += new System.EventHandler(this.backMenu_Click);
             // 
             // sound
             // 
@@ -126,7 +126,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.mute);
             this.Controls.Add(this.sound);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.backMenu);
             this.Controls.Add(this.Easy);
             this.Controls.Add(this.Normal);
             this.Controls.Add(this.Difficult);
@@ -139,7 +139,6 @@
             this.Name = "Settings";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Settings";
-            this.Load += new System.EventHandler(this.Settings_Load);
             this.ResumeLayout(false);
 
         }
@@ -149,7 +148,7 @@
         private System.Windows.Forms.Label Difficult;
         private System.Windows.Forms.Label Normal;
         private System.Windows.Forms.Label Easy;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label backMenu;
         private System.Windows.Forms.Label sound;
         private System.Windows.Forms.Label mute;
     }

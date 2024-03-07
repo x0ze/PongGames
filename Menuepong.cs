@@ -54,7 +54,7 @@ namespace PongGames
             Environment.Exit(0);
         }
 
-        private void label2_Click(object sender, EventArgs e)       // Settings menu
+        private void settings_Click(object sender, EventArgs e)     // Settings menu
         {
             this.Hide();
             Settings settingswindows = new Settings();
