@@ -52,16 +52,36 @@ namespace PongGames
 
         private void Back_menu_Click(object sender, EventArgs e)                                                                // In game back menu
         {
-            this.Hide();                                    
+            this.Close();                                    
             Menuepong form3 = new Menuepong();
             form3.Show();
         }
 
         private void Restart_Click(object sender, EventArgs e)                                                                  // Restart Game
         {
-            this.Hide();
+            gameover.Hide();                                                                                                    // Hide Game over
+            Back_menu.Hide();                                                                                                   // Hide Menu
+            Restart.Hide();                                                                                                     // Hide Restart
+            Pause.Hide();                                                                                                       // Hide Pause
+            label1.Hide();
+            label2.Hide();
+            password.Hide();
+            ball.Left = this.Width / 2;
+            ball.Top = this.Height / 2;
+            scoreLeft = 0;
+            scoreRight = 0;
+            nbrRebounds = 0;
+            movement.Start();
+            levelUp.Start();
+            if(Menuepong.Solo) // need to make second to 0 again (bug)
+                Timer.Start();
+            pad1.Top = this.Height / 2 - pad1.Height;
+            pad2.Top = this.Height / 2 - pad2.Height;
+            /* old working restart
+            this.Close();
             Pong pong = new Pong();
             pong.Show();
+            */
         }
 
         private void speedUp(object sender, EventArgs e)                                                                        // LevelUp (SpeedUp every 30 sec)
@@ -143,9 +163,9 @@ namespace PongGames
 
         private void MoveEvent(object sender, EventArgs e)                                                                      // All movement in the game
         {
-            if (upLeft && !pad1.Bounds.IntersectsWith(sideUp.Bounds))                                                   // Move pad1 on top
+            if (upLeft && !pad1.Bounds.IntersectsWith(sideUp.Bounds))                                                           // Move pad1 on top
                 pad1.Top -= speed;
-            if (downLeft && !pad1.Bounds.IntersectsWith(sideDown.Bounds))                                               // Move pad1 on bottom
+            if (downLeft && !pad1.Bounds.IntersectsWith(sideDown.Bounds))                                                       // Move pad1 on bottom
                 pad1.Top += speed;
             if (Menuepong.cheat)                                                                                                // Cheat feature (pad1 can move left and right)
             {
@@ -165,7 +185,7 @@ namespace PongGames
                 Timertime.Hide();
                 pad2.Show();
                 wallTraining.Hide();
-                if (upRight && !pad2.Bounds.IntersectsWith(sideUp.Bounds))                                              // Move pad2 on top
+                if (upRight && !pad2.Bounds.IntersectsWith(sideUp.Bounds))                                                      // Move pad2 on top
                     pad2.Top -= speed;
                 if (downRight && !pad2.Bounds.IntersectsWith(sideDown.Bounds))
                     pad2.Top += speed;
@@ -208,8 +228,8 @@ namespace PongGames
                         downBall = true;
                     }
                 }
-            }
-            if (left)                                                                                                     // Ball move left
+            }       
+            if (left)                                                                                                           // Ball move left
             {
                 ball.Left -=speed;
                 if (upBall)
@@ -217,7 +237,7 @@ namespace PongGames
                 if (downBall)
                     ball.Top +=speed;
             }
-            if (right)                                                                                                  // Ball move right
+            if (right)                                                                                                          // Ball move right
             {
                 ball.Left += speed;
                 if (upBall)
