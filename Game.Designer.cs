@@ -53,13 +53,13 @@
             this.Pause = new System.Windows.Forms.Label();
             this.Timer = new System.Windows.Forms.Timer(this.components);
             this.Timertime = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.sideDown = new PongGames.picturebox();
             this.sideUp = new PongGames.picturebox();
             this.outLeft = new PongGames.picturebox();
             this.outRight = new PongGames.picturebox();
             this.ball = new PongGames.picturebox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.password = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pad1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pad2)).BeginInit();
@@ -263,7 +263,7 @@
             // levelUp
             // 
             this.levelUp.Enabled = true;
-            this.levelUp.Interval = 30000;
+            this.levelUp.Interval = 3000;
             this.levelUp.Tick += new System.EventHandler(this.speedUp);
             // 
             // wallTraining
@@ -308,30 +308,6 @@
             this.Timertime.TabIndex = 25;
             this.Timertime.Text = "0";
             // 
-            // label1
-            // 
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Transparent;
-            this.label1.Image = ((System.Drawing.Image)(resources.GetObject("label1.Image")));
-            this.label1.Location = new System.Drawing.Point(258, 172);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(435, 103);
-            this.label1.TabIndex = 28;
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label2
-            // 
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Transparent;
-            this.label2.Image = ((System.Drawing.Image)(resources.GetObject("label2.Image")));
-            this.label2.Location = new System.Drawing.Point(-6, -3);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(952, 507);
-            this.label2.TabIndex = 30;
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // sideDown
             // 
             this.sideDown.Location = new System.Drawing.Point(-6, 493);
@@ -368,11 +344,35 @@
             // ball
             // 
             this.ball.BackColor = System.Drawing.Color.Yellow;
-            this.ball.Location = new System.Drawing.Point(477, 219);
+            this.ball.Location = new System.Drawing.Point(477, 240);
             this.ball.Name = "ball";
             this.ball.Size = new System.Drawing.Size(15, 15);
             this.ball.TabIndex = 13;
             this.ball.TabStop = false;
+            // 
+            // label2
+            // 
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Transparent;
+            this.label2.Image = ((System.Drawing.Image)(resources.GetObject("label2.Image")));
+            this.label2.Location = new System.Drawing.Point(-6, -3);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(952, 507);
+            this.label2.TabIndex = 30;
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Transparent;
+            this.label1.Image = ((System.Drawing.Image)(resources.GetObject("label1.Image")));
+            this.label1.Location = new System.Drawing.Point(258, 172);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(435, 103);
+            this.label1.TabIndex = 28;
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // password
             // 
@@ -480,8 +480,8 @@
         private System.Windows.Forms.Label Pause;
         private System.Windows.Forms.Timer Timer;
         private System.Windows.Forms.Label Timertime;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox password;
     }
 }

@@ -23,47 +23,33 @@ namespace PongGames
                 Normal.ForeColor = Color.Yellow;
             if(difficult)
                 Difficult.ForeColor = Color.Red;
-            if (!soundOn)
-            {
-                mute.Show();
-                sound.Hide();
-            }
-            else
-            {
-                mute.Hide();
-                sound.Show();
-            }
+            mute.Visible = !soundOn;
+            sound.Visible = soundOn;
         }
 
-        private void Difficult_Click(object sender, EventArgs e)         // Diffcult color (red)
+        private void Easy_Click(object sender, EventArgs e)
         {
-            Difficult.ForeColor = Color.Red;
-            Normal.ForeColor = Color.White;
-            Easy.ForeColor = Color.White;
-            easy = false;
-            normal = false;
-            difficult = true;
+            Easy.ForeColor = Color.Green;                               // Easy color (green)
+            Normal.ForeColor = Difficult.ForeColor = Color.White;       // Other difficulty color (white)
+            (easy, normal, difficult) = (true, false, false);           // Set difficulty to easy
+        }
+        private void Normal_Click(object sender, EventArgs e)
+        {
+            Normal.ForeColor = Color.Yellow;                            // Normal color (yellow)
+            Easy.ForeColor = Difficult.ForeColor = Color.White;         // Other difficulty color (white)
+            (easy, normal, difficult) = (false, true, false);           // Set difficulty to normal
+
+        }
+        private void Difficult_Click(object sender, EventArgs e)         
+        {
+            Difficult.ForeColor = Color.Red;                            // Diffcult color (red)
+            Normal.ForeColor = Easy.ForeColor = Color.White;            // Other difficulty color (white)
+            (easy, normal, difficult) = (false, false, true);           // Set difficulty to difficult
         }
 
-        private void Normal_Click(object sender, EventArgs e)            // Normal color (yellow)
-        {
-            Difficult.ForeColor = Color.White;
-            Normal.ForeColor = Color.Yellow;
-            Easy.ForeColor = Color.White;
-            easy = false;
-            normal = true;
-            difficult = false;
-        }
 
-        private void Easy_Click(object sender, EventArgs e)              // Easy color (green)
-        {
-            Difficult.ForeColor = Color.White;
-            Normal.ForeColor = Color.White;
-            Easy.ForeColor = Color.Green;
-            easy = true;
-            normal = false;
-            difficult = false;
-        }
+
+
 
         private void backMenu_Click(object sender, EventArgs e)          // Exit settings, return back to main menu
         {

@@ -16,6 +16,7 @@ namespace PongGames
         public static bool Solo = false;                            // Solo mode not in favorite by default
         public static bool Duo = true;                              // Duo mode in favorite by default
         public static bool cheat = false;                           // Cheat mode disabled by default
+        private Pong Game;
         public Menuepong()
         {
             InitializeComponent();
@@ -30,20 +31,19 @@ namespace PongGames
                 solo.BackColor = Color.Transparent;
             }
         }
-
         private void Start_Click(object sender, EventArgs e)
         {
             if(Solo)                                                // Start solo game
             {
                 this.Hide();
-                Pong Game = new Pong();
+                Game = new Pong();
                 Game.Show();
             }
 
-            if (Duo)                                                // Start duo game
+            if (Duo)                                                 // Start duo game
             {
                 this.Hide();
-                Pong Game = new Pong();
+                Game = new Pong();
                 Game.Show();
             }
          
