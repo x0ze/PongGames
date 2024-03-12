@@ -263,7 +263,7 @@
             // levelUp
             // 
             this.levelUp.Enabled = true;
-            this.levelUp.Interval = 3000;
+            this.levelUp.Interval = 30000;
             this.levelUp.Tick += new System.EventHandler(this.speedUp);
             // 
             // wallTraining
