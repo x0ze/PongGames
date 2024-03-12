@@ -26,7 +26,7 @@ namespace PongGames
         bool upLeft, downLeft, upRight, downRight, moveLeft, moveRight, right, left, upBall, downBall, gameOver = false, win;   // Initialize all boolean vars
         int scoreLeft = 0, scoreRight = 0, seconde = 0;                                                                         // Define var score to 0 on start
         int speed, easySpeed = 10, normalSpeed = 15, difficultSpeed = 25;                                                       // Speed of the Game on start
-        int levelUpSpeed, easyLevelUp = 0, normalLevelUp = 1, difficultLevelUp = 3;                                             // LevelUp speed of the game according on difficulty mode
+        int easyLevelUp = 0, normalLevelUp = 1, difficultLevelUp = 3;                                                           // LevelUp speed of the game according on difficulty mode
         int nbrRebounds;                                                                                                        // Number of rebounds on the Training wall (solo mode)
         int nbrReboundsForEasterEgg = 2;                                                                                        // Number of rebounds on the Training wall to release the easter egg (solo mode)
 
@@ -94,6 +94,7 @@ namespace PongGames
             }
 
         }
+
         private void KeyIsUp(object sender, KeyEventArgs e)                                                                     // Key not pressed
         {
             if (e.KeyCode == Keys.W)
@@ -119,10 +120,14 @@ namespace PongGames
             MovePads();
             SoloMode();
             DuoMode();
-            ReboundsBall();
             BallMovement();
             Score();
             GameOver();
+        }
+
+        private void ReboundsCheck(object sender, EventArgs e)
+        {
+            ReboundsBall();
         }
 
         private void MovePads()
@@ -322,9 +327,9 @@ namespace PongGames
         private void speedUp(object sender, EventArgs e)                                                                        // LevelUp (SpeedUp every 30 sec)
         {
             if(Settings.normal)
-                speed += 1;
+                speed += normalLevelUp;
             if (Settings.difficult)
-                speed += 3;
+                speed += difficultLevelUp;
             if (Settings.easy)
                 speed += easyLevelUp;
         }

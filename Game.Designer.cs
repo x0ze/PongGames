@@ -61,6 +61,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.password = new System.Windows.Forms.TextBox();
+            this.Rebounds = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pad1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pad2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -383,6 +384,12 @@
             this.password.Size = new System.Drawing.Size(45, 13);
             this.password.TabIndex = 31;
             // 
+            // Rebounds
+            // 
+            this.Rebounds.Enabled = true;
+            this.Rebounds.Interval = 1;
+            this.Rebounds.Tick += new System.EventHandler(this.ReboundsCheck);
+            // 
             // Pong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -483,6 +490,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox password;
+        private System.Windows.Forms.Timer Rebounds;
     }
 }
 
