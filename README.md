@@ -6,6 +6,9 @@ This project aims to develop the classic game Pong using the Windows Forms platf
 
 Pong is inspired by table tennis, with players facing off by moving their virtual paddle up and down to keep the ball within the playing field. Players can alter the ball's direction based on where it strikes the paddle, while its speed gradually increases during the match. A score is displayed for the ongoing game, and sound effects accompany the ball's impact on the paddles.
 
+## Demo
+![](https://github.com/x0ze/PongGames/blob/master/demo.gif)
+
 ## Requirements
 
 - Windows operating system
